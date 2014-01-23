@@ -1,0 +1,7 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<output buttontype="buttonmenu">
+  <shorttitle>Imgur</shorttitle>
+  <longtitle>Imgur Output</longtitle>
+  <description>Send to imgur.com</description>
+  <icon>imgur.com.ico</icon>
+</output>

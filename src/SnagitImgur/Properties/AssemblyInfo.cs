@@ -7,7 +7,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyProduct("Send to imgur.com")]
 [assembly: AssemblyCopyright("Copyright © Igal Tabachnik 2011-2014")]
 
-[assembly: ComVisible(true)]
+[assembly: ComVisible(false)]
 
 [assembly: AssemblyVersion("0.5.0")]
 [assembly: AssemblyFileVersion("0.5.0")]

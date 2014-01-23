@@ -1,0 +1,200 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<DOCUMENT Type="Advanced Installer" CreateVersion="10.9" version="10.9" Modules="professional" RootPath="." Language="en" Id="{4A165E2C-9C59-455D-AC72-8DFD45382697}">
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
+    <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
+    <ROW Property="AI_MINDOTNETVERSION" MultiBuildValue="DefaultBuild:4.0" ValueLocId="-"/>
+    <ROW Property="ALLUSERS" Value="1" MultiBuildValue="DefaultBuild:"/>
+    <ROW Property="ARPCOMMENTS" Value="This installer database contains the logic and data required to install [|ProductName]." ValueLocId="*"/>
+    <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
+    <ROW Property="ARPPRODUCTICON" Value="imgur.com.exe" Type="8"/>
+    <ROW Property="MSIFASTINSTALL" MultiBuildValue="DefaultBuild:7"/>
+    <ROW Property="Manufacturer" Value="Igal Tabachnik"/>
+    <ROW Property="ProductCode" Value="1033:{FEB09AEE-6846-4CD5-B2F7-88FB4D2153DB} " Type="16"/>
+    <ROW Property="ProductLanguage" Value="1033"/>
+    <ROW Property="ProductName" Value="Snagit to Imgur"/>
+    <ROW Property="ProductVersion" Value="0.5.0" Type="32"/>
+    <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
+    <ROW Property="UpgradeCode" Value="{80886ACD-A6AC-44F2-A8CC-81EA74E66483}"/>
+    <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsType9XDisplay" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+    <ROW Property="WindowsTypeNT40Display" MultiBuildValue="DefaultBuild:Windows NT 4.0" ValueLocId="-"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDirsComponent">
+    <ROW Directory="APPDIR" Directory_Parent="TARGETDIR" DefaultDir="APPDIR:." IsPseudoRoot="1"/>
+    <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
+    <ROW Component="Assembly" ComponentId="{59B21EE5-8A3E-4BF3-8DA4-B68EB3C8504F}" Directory_="APPDIR" Attributes="4" KeyPath="Assembly"/>
+    <ROW Component="Assembly_1" ComponentId="{CBB84FC6-4145-462F-8B19-4E1D0BD8A758}" Directory_="APPDIR" Attributes="4" KeyPath="Assembly_1"/>
+    <ROW Component="Class" ComponentId="{E725DFF8-37DA-4122-A12B-ABD76FD0A2DB}" Directory_="APPDIR" Attributes="4" KeyPath="Class"/>
+    <ROW Component="Class_1" ComponentId="{DC431D21-FF34-465E-AE65-25DEFCAD1C40}" Directory_="APPDIR" Attributes="4" KeyPath="Class_1"/>
+    <ROW Component="CodeBase" ComponentId="{ED5AB42F-16F5-42F0-ADDB-D61E9F0A52D4}" Directory_="APPDIR" Attributes="4" KeyPath="CodeBase"/>
+    <ROW Component="CodeBase_1" ComponentId="{47F56662-DDFC-4A6A-AF0E-285C0E7EDBBF}" Directory_="APPDIR" Attributes="4" KeyPath="CodeBase_1"/>
+    <ROW Component="JsonFx.dll" ComponentId="{73DB2471-C7EC-4B8E-B08C-601D291F9A5D}" Directory_="APPDIR" Attributes="0" KeyPath="JsonFx.dll"/>
+    <ROW Component="Microsoft.Threading.Tasks.Extensions.Des" ComponentId="{E5F04ABE-478C-45A5-A07B-A0A218CDB24D}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Threading.Tasks.Extensions.Desktop.dll"/>
+    <ROW Component="Microsoft.Threading.Tasks.Extensions.dll" ComponentId="{D98C636F-8F2C-4BBC-87A2-60295A6B116D}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Threading.Tasks.Extensions.dll"/>
+    <ROW Component="Microsoft.Threading.Tasks.dll" ComponentId="{3A72BE04-A737-4BE7-AF47-58E37488BEA9}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Threading.Tasks.dll"/>
+    <ROW Component="RestSharp.dll" ComponentId="{55BD8C48-A508-4F62-9FE8-C223DC7332BE}" Directory_="APPDIR" Attributes="0" KeyPath="RestSharp.dll"/>
+    <ROW Component="RuntimeVersion" ComponentId="{4127099E-7AE7-4662-88A0-8692026B35C5}" Directory_="APPDIR" Attributes="4" KeyPath="RuntimeVersion"/>
+    <ROW Component="RuntimeVersion_1" ComponentId="{A0D7B858-5C7C-4E4F-BDD4-687EBAADDB0C}" Directory_="APPDIR" Attributes="4" KeyPath="RuntimeVersion_1"/>
+    <ROW Component="SnagitImgur.dll" ComponentId="{704B788A-3034-4495-B492-B4D99CC854C8}" Directory_="APPDIR" Attributes="0" KeyPath="SnagitImgur.dll"/>
+    <ROW Component="Software" ComponentId="{65EFBD08-0585-4BA1-9D0D-539A2687A8F0}" Directory_="APPDIR" Attributes="4" KeyPath="Software"/>
+    <ROW Component="System.Runtime.dll" ComponentId="{A844B0D2-9F1D-434F-A57B-E7B8422E12EB}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.dll"/>
+    <ROW Component="System.Threading.Tasks.dll" ComponentId="{B7E2DA73-7F8A-41DE-8321-ABD06ABFAD7B}" Directory_="APPDIR" Attributes="0" KeyPath="System.Threading.Tasks.dll"/>
+    <ROW Component="_" ComponentId="{B0E610AA-681B-4508-A4D4-21723798E1A6}" Directory_="APPDIR" Attributes="4" KeyPath="__1"/>
+    <ROW Component="__1" ComponentId="{A1BA5B5E-978B-42BF-AD52-DAC70BEC6892}" Directory_="APPDIR" Attributes="4" KeyPath="__2"/>
+    <ROW Component="imgur.com.ico" ComponentId="{FBE882CC-FB51-481E-B38E-9AAAFF3D21EA}" Directory_="APPDIR" Attributes="0" KeyPath="imgur.com.ico" Type="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="Assembly Assembly_1 Class Class_1 CodeBase CodeBase_1 JsonFx.dll Microsoft.Threading.Tasks.Extensions.Des Microsoft.Threading.Tasks.Extensions.dll Microsoft.Threading.Tasks.dll RestSharp.dll RuntimeVersion RuntimeVersion_1 SnagitImgur.dll Software System.Runtime.dll System.Threading.Tasks.dll _ __1 imgur.com.ico"/>
+    <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
+    <ROW File="JsonFx.dll" Component_="JsonFx.dll" FileName="JsonFx.dll" Attributes="0" SourcePath="..\output\Release\JsonFx.dll" SelfReg="false" NextFile="Microsoft.Threading.Tasks.dll"/>
+    <ROW File="Microsoft.Threading.Tasks.Extensions.Desktop.dll" Component_="Microsoft.Threading.Tasks.Extensions.Des" FileName="MICROS~2.DLL|Microsoft.Threading.Tasks.Extensions.Desktop.dll" Attributes="0" SourcePath="..\output\Release\Microsoft.Threading.Tasks.Extensions.Desktop.dll" SelfReg="false" NextFile="Microsoft.Threading.Tasks.Extensions.dll"/>
+    <ROW File="Microsoft.Threading.Tasks.Extensions.dll" Component_="Microsoft.Threading.Tasks.Extensions.dll" FileName="MICROS~3.DLL|Microsoft.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\output\Release\Microsoft.Threading.Tasks.Extensions.dll" SelfReg="false" NextFile="Package.xml"/>
+    <ROW File="Microsoft.Threading.Tasks.dll" Component_="Microsoft.Threading.Tasks.dll" FileName="MICROS~1.DLL|Microsoft.Threading.Tasks.dll" Attributes="0" SourcePath="..\output\Release\Microsoft.Threading.Tasks.dll" SelfReg="false" NextFile="Microsoft.Threading.Tasks.Extensions.Desktop.dll"/>
+    <ROW File="Package.xml" Component_="imgur.com.ico" FileName="Package.xml" Attributes="0" SourcePath="..\output\Release\Package.xml" SelfReg="false" NextFile="RestSharp.dll"/>
+    <ROW File="RestSharp.dll" Component_="RestSharp.dll" FileName="RESTSH~1.DLL|RestSharp.dll" Attributes="0" SourcePath="..\output\Release\RestSharp.dll" SelfReg="false" NextFile="SnagitImgur.dll"/>
+    <ROW File="SnagitImgur.Output.xml" Component_="imgur.com.ico" FileName="SNAGIT~1.XML|SnagitImgur.Output.xml" Attributes="0" SourcePath="..\output\Release\SnagitImgur.Output.xml" SelfReg="false" NextFile="System.Runtime.dll"/>
+    <ROW File="SnagitImgur.dll" Component_="SnagitImgur.dll" FileName="SNAGIT~1.DLL|SnagitImgur.dll" Attributes="0" SourcePath="..\output\Release\SnagitImgur.dll" SelfReg="false" NextFile="SnagitImgur.dll.config"/>
+    <ROW File="SnagitImgur.dll.config" Component_="imgur.com.ico" FileName="SNAGIT~1.CON|SnagitImgur.dll.config" Attributes="0" SourcePath="..\output\Release\SnagitImgur.dll.config" SelfReg="false" NextFile="SnagitImgur.Output.xml"/>
+    <ROW File="System.Runtime.dll" Component_="System.Runtime.dll" FileName="SYSTEM~1.DLL|System.Runtime.dll" Attributes="0" SourcePath="..\output\Release\System.Runtime.dll" SelfReg="false" NextFile="System.Threading.Tasks.dll"/>
+    <ROW File="System.Threading.Tasks.dll" Component_="System.Threading.Tasks.dll" FileName="SYSTEM~2.DLL|System.Threading.Tasks.dll" Attributes="0" SourcePath="..\output\Release\System.Threading.Tasks.dll" SelfReg="false"/>
+    <ROW File="imgur.com.ico" Component_="imgur.com.ico" FileName="IMGURC~1.ICO|imgur.com.ico" Attributes="0" SourcePath="..\output\Release\imgur.com.ico" SelfReg="false" NextFile="JsonFx.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="..\output" PackageFileName="SnagitImgur_[|ProductVersion]" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+    <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.CacheComponent">
+    <ATTRIBUTE name="CacheIndex" value="Installer_1.txt"/>
+    <ATTRIBUTE name="Folder" value="..\output"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.DictionaryComponent">
+    <ROW Path="&lt;AI_DICTS&gt;ui.ail"/>
+    <ROW Path="&lt;AI_DICTS&gt;ui_en.ail"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.FragmentComponent">
+    <ROW Fragment="CommonUI.aip" Path="&lt;AI_FRAGS&gt;CommonUI.aip"/>
+    <ROW Fragment="FolderDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\FolderDlg.aip"/>
+    <ROW Fragment="MaintenanceTypeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceTypeDlg.aip"/>
+    <ROW Fragment="MaintenanceWelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\MaintenanceWelcomeDlg.aip"/>
+    <ROW Fragment="SequenceDialogs.aip" Path="&lt;AI_THEMES&gt;classic\fragments\SequenceDialogs.aip"/>
+    <ROW Fragment="Sequences.aip" Path="&lt;AI_FRAGS&gt;Sequences.aip"/>
+    <ROW Fragment="StaticUIStrings.aip" Path="&lt;AI_FRAGS&gt;StaticUIStrings.aip"/>
+    <ROW Fragment="UI.aip" Path="&lt;AI_THEMES&gt;classic\fragments\UI.aip"/>
+    <ROW Fragment="Validation.aip" Path="&lt;AI_FRAGS&gt;Validation.aip"/>
+    <ROW Fragment="VerifyRemoveDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRemoveDlg.aip"/>
+    <ROW Fragment="VerifyRepairDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\VerifyRepairDlg.aip"/>
+    <ROW Fragment="WelcomeDlg.aip" Path="&lt;AI_THEMES&gt;classic\fragments\WelcomeDlg.aip"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAppSearchComponent">
+    <ROW Property="AI_DOTNET40_SEARCH" Signature_="AI_DotNet40SearchSgn" Builds="DefaultBuild"/>
+    <ROW Property="AI_DOTNET451_SEARCH" Signature_="AI_DotNet451SearchSgn" Builds="DefaultBuild"/>
+    <ROW Property="AI_DOTNET45_SEARCH" Signature_="AI_DotNet45SearchSgn" Builds="DefaultBuild"/>
+    <ROW Property="SNAGIT_ACCESSORIES_DIR" Signature_="AppSearchSign"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAssemblyComponent">
+    <ROW Component_="SnagitImgur.dll" Feature_="MainFeature" File_Application="SnagitImgur.dll" Attributes="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiAssemblyNameComponent">
+    <ROW Component_="SnagitImgur.dll" Name="Name" Value="SnagitImgur" Sync="false"/>
+    <ROW Component_="SnagitImgur.dll" Name="Culture" Value="neutral" Sync="false"/>
+    <ROW Component_="SnagitImgur.dll" Name="Version" Value="0.5.0.0" Sync="true"/>
+    <ROW Component_="SnagitImgur.dll" Name="PublicKeyToken" Value="4f0394abfbde9de6" Sync="false"/>
+    <ROW Component_="SnagitImgur.dll" Name="ProcessorArchitecture" Value="MSIL" Sync="false"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiBinaryComponent">
+    <ROW Name="aicustact.dll" SourcePath="&lt;AI_CUSTACTS&gt;aicustact.dll"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiControlEventComponent">
+    <ROW Dialog_="WelcomeDlg" Control_="Next" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="FolderDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="FolderDlg" Control_="Back" Event="NewDialog" Argument="WelcomeDlg" Condition="AI_INSTALL" Ordering="1"/>
+    <ROW Dialog_="MaintenanceWelcomeDlg" Control_="Next" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="99"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_MAINT" Ordering="198"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="202"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_INSTALL" Ordering="197"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="FolderDlg" Condition="AI_INSTALL" Ordering="201"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_MAINT" Ordering="101"/>
+    <ROW Dialog_="CustomizeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="ChangeButton" Event="NewDialog" Argument="CustomizeDlg" Condition="AI_MAINT" Ordering="501"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceWelcomeDlg" Condition="AI_MAINT" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RemoveButton" Event="NewDialog" Argument="VerifyRemoveDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="1"/>
+    <ROW Dialog_="MaintenanceTypeDlg" Control_="RepairButton" Event="NewDialog" Argument="VerifyRepairDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="601"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Back" Event="NewDialog" Argument="MaintenanceTypeDlg" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="1"/>
+    <ROW Dialog_="VerifyRepairDlg" Control_="Repair" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Repair&quot;" Ordering="399" Options="1"/>
+    <ROW Dialog_="VerifyRemoveDlg" Control_="Remove" Event="EndDialog" Argument="Return" Condition="AI_MAINT AND InstallMode=&quot;Remove&quot;" Ordering="299" Options="1"/>
+    <ROW Dialog_="PatchWelcomeDlg" Control_="Next" Event="NewDialog" Argument="VerifyReadyDlg" Condition="AI_PATCH" Ordering="201"/>
+    <ROW Dialog_="ResumeDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_RESUME" Ordering="299"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Install" Event="EndDialog" Argument="Return" Condition="AI_PATCH" Ordering="199"/>
+    <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
+    <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
+    <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
+    <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
+    <ROW Action="AI_ResolveLocalizedCredentials" Type="1" Source="aicustact.dll" Target="GetLocalizedCredentials"/>
+    <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
+    <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[SNAGIT_ACCESSORIES_DIR]\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}"/>
+    <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[SNAGIT_ACCESSORIES_DIR]\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}"/>
+    <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiDrLocatorComponent">
+    <ROW Signature_="AppSearchSign" Path="[LocalAppDataFolder]\TechSmith\Snagit\Accessories" Depth="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiIconsComponent">
+    <ROW Name="imgur.com.exe" SourcePath="..\output\Release\imgur.com.ico" Index="0"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstExSeqComponent">
+    <ROW Action="AI_DOWNGRADE" Condition="AI_NEWERPRODUCTFOUND AND (UILevel &lt;&gt; 5)" Sequence="210"/>
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_STORE_LOCATION" Condition="(Not Installed) OR REINSTALL" Sequence="1501"/>
+    <ROW Action="AI_PREPARE_UPGRADE" Condition="AI_UPGRADE=&quot;No&quot; AND (Not Installed)" Sequence="1399"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="52"/>
+    <ROW Action="AI_ResolveLocalizedCredentials" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
+    <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
+    <ROW Action="AI_ResolveLocalizedCredentials" Sequence="52"/>
+    <ROW Action="AI_DpiContentScale" Sequence="51"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
+    <ROW Condition="(AI_DOTNET40_SEARCH = &quot;#1&quot;) OR (AI_DOTNET45_SEARCH &gt;= &quot;4.5&quot;) OR (AI_DOTNET451_SEARCH = &quot;#378758&quot;) OR (AI_DOTNET451_SEARCH = &quot;#378675&quot;)" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_MINDOTNETVERSION]" DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="(VersionNT &lt;&gt; 400)" Description="[ProductName] cannot be installed on the following Windows versions: [WindowsTypeNT40Display]" DescriptionLocId="AI.LaunchCondition.NoNT40" IsPredefined="true" Builds="DefaultBuild"/>
+    <ROW Condition="VersionNT" Description="[ProductName] cannot be installed on [WindowsType9XDisplay]" DescriptionLocId="AI.LaunchCondition.No9X" IsPredefined="true" Builds="DefaultBuild"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegLocatorComponent">
+    <ROW Signature_="AI_DotNet40SearchSgn" Root="2" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Name="Install" Type="2"/>
+    <ROW Signature_="AI_DotNet451SearchSgn" Root="2" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Name="Release" Type="2"/>
+    <ROW Signature_="AI_DotNet45SearchSgn" Root="2" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Name="Version" Type="2"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
+    <ROW Registry="Assembly" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="Assembly" Value="SnagitImgur, Version=0.5.0.0, Culture=neutral, PublicKeyToken=null" Component_="Assembly"/>
+    <ROW Registry="Assembly_1" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\0.5.0.0" Name="Assembly" Value="SnagitImgur, Version=0.5.0.0, Culture=neutral, PublicKeyToken=null" Component_="Assembly_1"/>
+    <ROW Registry="Class" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="Class" Value="SnagitImgur.Plugin.PackageOutput" Component_="Class"/>
+    <ROW Registry="Class_1" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\0.5.0.0" Name="Class" Value="SnagitImgur.Plugin.PackageOutput" Component_="Class_1"/>
+    <ROW Registry="CodeBase" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="CodeBase" Value="file:///[#SnagitImgur.dll]" Component_="CodeBase"/>
+    <ROW Registry="CodeBase_1" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\0.5.0.0" Name="CodeBase" Value="file:///[#SnagitImgur.dll]" Component_="CodeBase_1"/>
+    <ROW Registry="RuntimeVersion" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Component_="RuntimeVersion"/>
+    <ROW Registry="RuntimeVersion_1" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\0.5.0.0" Name="RuntimeVersion" Value="v4.0.30319" Component_="RuntimeVersion_1"/>
+    <ROW Registry="Software" Root="1" Key="Software" Name="+" Component_="Software"/>
+    <ROW Registry="__1" Root="1" Key="Software\Classes\SnagitImgur.Plugin.PackageOutput\CLSID" Value="[\{]681D1A5C-A78F-4D27-86A2-A07AAC89B8FE[\}]" Component_="_"/>
+    <ROW Registry="__2" Root="1" Key="Software\Classes\SnagitImgur.Plugin.PackageOutput" Value="SnagitImgur.Plugin.PackageOutput" Component_="__1"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
+    <ATTRIBUTE name="UsedTheme" value="classic"/>
+  </COMPONENT>
+  <COMPONENT cid="caphyon.advinst.msicomp.MsiUpgradeComponent">
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="0.0.1" VersionMax="[|ProductVersion]" Attributes="257" ActionProperty="OLDPRODUCTS"/>
+    <ROW UpgradeCode="[|UpgradeCode]" VersionMin="[|ProductVersion]" Attributes="2" ActionProperty="AI_NEWERPRODUCTFOUND"/>
+  </COMPONENT>
+</DOCUMENT>

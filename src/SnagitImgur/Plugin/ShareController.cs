@@ -1,7 +1,11 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Forms;
+using System.Windows.Interop;
 using SnagitImgur.Plugin.ImageService;
 using SNAGITLib;
 
@@ -20,16 +24,38 @@ namespace SnagitImgur.Plugin
 
         public async Task ShareImage(IImageService service)
         {
+            StartAsyncOutput();
+
             string imagePath = GetCapturedImage();
             try
             {
                 ImageInfo result = await service.UploadAsync(imagePath);
-                
                 Process.Start(result.Url);
+            }
+            catch (WebException we)
+            {
+
             }
             finally
             {
+                FinishAsyncOutput();
                 File.Delete(imagePath);
+            }
+        }
+
+        private void StartAsyncOutput()
+        {
+            if (asyncOutput != null)
+            {
+                asyncOutput.StartAsyncOutput();
+            }
+        }
+
+        private void FinishAsyncOutput()
+        {
+            if (asyncOutput != null)
+            {
+                asyncOutput.FinishAsyncOutput(true);
             }
         }
 

@@ -22,17 +22,12 @@ You can change the position of the **Imgur** button in the Editor Options.
 
 3. Install the plugin!
 
-
 Special thanks **Stephen Kunkel** for creating the coolest Imgur/Snagit icon!
 
 ## Bugs? Questions? Suggestions?
 
 Please feel free to [report them](../../issues)!
 
-
 ## Miscellaneous
 
 Snagit® is a registered trademark of TechSmith® Corporation, Copyright © 1999–2012. The author of this plugin has no affiliation with TechSmith® Corporation, nor is this plugin endorsed or supported in any shape or form by the TechSmith® Corporation. The source code for the plugin is licensed under the MIT license, the terms of which are specified in the file `License.txt`.
-
-Thanks!
-****

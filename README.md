@@ -2,7 +2,7 @@
 
 ![Snagit Imgur](http://i.imgur.com/g6aTS.png)
 
-A plugin ("accessory") for [TechSmith® Snagit®](http://www.techsmith.com/snagit.html) that allows sending captured images to online image sharing sites, such as [http://imgur.com](http://imgur.com).
+A plugin ("accessory") for [TechSmith® Snagit®](http://www.techsmith.com/snagit.html) that allows sending captured images to online image sharing site [http://imgur.com](http://imgur.com).
 
 This plugin adds a button on the **Share** tab of the Image Editor, allowing you to upload the currently selected image to **Imgur**:
 

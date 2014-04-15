@@ -62,7 +62,7 @@ namespace SnagitImgur.Plugin
             var imageDocumentSave = snagItDocument as ISnagItImageDocumentSave;
             if (imageDocumentSave == null)
             {
-                throw new InvalidCastException("Unable to get image saving facility of Snagit");
+                throw new InvalidOperationException("Unable to get image saving facility of Snagit");
             }
 
             string tempFileName = Path.GetTempFileName() + ".png";

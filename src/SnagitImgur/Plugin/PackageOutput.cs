@@ -33,6 +33,7 @@ namespace SnagitImgur.Plugin
             }
             catch (Exception)
             {
+                // todo fix this
                 MessageBox.Show("an error occurred!");
             }
         }

@@ -1,5 +1,4 @@
-What is this?
--------------
+## What is this?
 
 ![Snagit Imgur](http://i.imgur.com/g6aTS.png)
 
@@ -15,8 +14,7 @@ It is also added to the main menu:
 
 You can change the position of the **Imgur** button in the Editor Options.
 
-Download and installation instructions
-======================================
+## Download and installation instructions
 
 1. [**Download the installer**](https://github.com/hmemcpy/SnagitImgur/releases/download/1.0/SnagitImgur_1.0.0.msi) (latest version: v1.0.0)
 
@@ -32,8 +30,8 @@ Special thanks **Stephen Kunkel** for creating the coolest Imgur/Snagit icon!
 Please feel free to [report them](../../issues)!
 
 
-Miscellaneous
--------------
+## Miscellaneous
+
 Snagit® is a registered trademark of TechSmith® Corporation, Copyright © 1999–2012. The author of this plugin has no affiliation with TechSmith® Corporation, nor is this plugin endorsed or supported in any shape or form by the TechSmith® Corporation. The source code for the plugin is licensed under the MIT license, the terms of which are specified in the file `License.txt`.
 
 Thanks!

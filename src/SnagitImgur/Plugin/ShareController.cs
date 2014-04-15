@@ -3,9 +3,6 @@ using System.Diagnostics;
 using System.IO;
 using System.Net;
 using System.Threading.Tasks;
-using System.Windows;
-using System.Windows.Forms;
-using System.Windows.Interop;
 using SnagitImgur.Plugin.ImageService;
 using SNAGITLib;
 

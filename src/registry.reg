@@ -1,0 +1,53 @@
+REGEDIT4
+
+[HKEY_CURRENT_USER\Software\Classes\SnagitImgur.Plugin.Package]
+@="SnagitImgur.Plugin.Package"
+
+[HKEY_CURRENT_USER\Software\Classes\SnagitImgur.Plugin.Package\CLSID]
+@="{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}"
+
+[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}]
+@="SnagitImgur.Plugin.Package"
+
+[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="SnagitImgur.Plugin.Package"
+"Assembly"="SnagitImgur, Version=0.5.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6"
+"RuntimeVersion"="v4.0.30319"
+
+[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32\0.5.0.0]
+"Class"="SnagitImgur.Plugin.Package"
+"Assembly"="SnagitImgur, Version=0.5.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6"
+"RuntimeVersion"="v4.0.30319"
+
+[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\ProgId]
+@="SnagitImgur.Plugin.Package"
+
+[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
+
+[HKEY_CURRENT_USER\Software\Classes\SnagitImgur.Plugin.PackageOutput]
+@="SnagitImgur.Plugin.PackageOutput"
+
+[HKEY_CURRENT_USER\Software\Classes\SnagitImgur.Plugin.PackageOutput\CLSID]
+@="{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}"
+
+[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}]
+@="SnagitImgur.Plugin.PackageOutput"
+
+[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="SnagitImgur.Plugin.PackageOutput"
+"Assembly"="SnagitImgur, Version=0.5.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6"
+"RuntimeVersion"="v4.0.30319"
+
+[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\0.5.0.0]
+"Class"="SnagitImgur.Plugin.PackageOutput"
+"Assembly"="SnagitImgur, Version=0.5.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6"
+"RuntimeVersion"="v4.0.30319"
+
+[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\ProgId]
+@="SnagitImgur.Plugin.PackageOutput"
+
+[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]

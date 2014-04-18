@@ -13,7 +13,7 @@
     <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="MSIFASTINSTALL" MultiBuildValue="DefaultBuild:7"/>
     <ROW Property="Manufacturer" Value="Igal Tabachnik"/>
-    <ROW Property="ProductCode" Value="1033:{9D6E3B44-6776-437E-9E3D-725E89C131B8} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{CB2A3E6A-F7FE-4159-8B6B-C44A010EBF14} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Imgur plugin for Snagit"/>
     <ROW Property="ProductVersion" Value="1.0.1" Type="32"/>
@@ -157,6 +157,11 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="SnagitEditor.exe"/>
+    <ROW Action="AI_DATA_SETTER_1" Type="51" Source="CustomActionData" Target="Snagit is running. You need to close Snagit/SnagitEditor before installing this plugin.&#13;\n&#13;\nWould you like to close Snagit? |Default title |MB_YESNO,MB_ICONWARNING,MB_DEFBUTTON1|BTN_PRESSED|[CLIENTPROCESSID]"/>
+    <ROW Action="AI_DATA_SETTER_2" Type="51" Source="CustomActionData" Target="SnagitEditor.exe"/>
+    <ROW Action="AI_DATA_SETTER_3" Type="51" Source="CustomActionData" Target="Snagit32.exe"/>
+    <ROW Action="AI_DATA_SETTER_4" Type="51" Source="CustomActionData" Target="Snagit32.exe"/>
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
     <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
@@ -167,9 +172,16 @@
     <ROW Action="AI_ResolveLocalizedCredentials" Type="1" Source="aicustact.dll" Target="GetLocalizedCredentials"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="DetectSnagit32" Type="1" Source="aicustact.dll" Target="DetectProcess" Options="1" AdditionalSeq="AI_DATA_SETTER_3"/>
+    <ROW Action="DetectSnagitEditor" Type="1" Source="aicustact.dll" Target="DetectProcess" Options="1" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="MessageBox" Type="1" Source="aicustact.dll" Target="MsgBox" Options="1" AdditionalSeq="AI_DATA_SETTER_1"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[SNAGIT_ACCESSORIES_DIR]\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[SNAGIT_ACCESSORIES_DIR]\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+    <ROW Action="SetSnagit32RunningProperty" Type="51" Source="Snagit32Running" Target="True"/>
+    <ROW Action="SetSnagitEditorRunningProperty" Type="51" Source="SnagitEditorRunning" Target="True"/>
+    <ROW Action="StopProcessSnagit32" Type="1" Source="aicustact.dll" Target="StopProcess" Options="1" AdditionalSeq="AI_DATA_SETTER_4"/>
+    <ROW Action="StopProcessSnagitEditor" Type="1" Source="aicustact.dll" Target="StopProcess" Options="1" AdditionalSeq="AI_DATA_SETTER_2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDrLocatorComponent">
     <ROW Signature_="AppSearchSign" Path="[LocalAppDataFolder]\TechSmith\Snagit\Accessories" Depth="0"/>
@@ -187,11 +199,23 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
-    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
-    <ROW Action="AI_ResolveLocalizedCredentials" Sequence="52"/>
-    <ROW Action="AI_DpiContentScale" Sequence="51"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="55"/>
+    <ROW Action="AI_ResolveLocalizedCredentials" Sequence="54"/>
+    <ROW Action="AI_DpiContentScale" Sequence="53"/>
     <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
     <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101"/>
+    <ROW Action="DetectSnagitEditor" Sequence="52"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="51"/>
+    <ROW Action="MessageBox" Condition="SnagitEditorRunning = &quot;True&quot; OR Snagit32Running = &quot;True&quot;" Sequence="81"/>
+    <ROW Action="AI_DATA_SETTER_1" Condition="SnagitEditorRunning = &quot;True&quot; OR Snagit32Running = &quot;True&quot;" Sequence="80"/>
+    <ROW Action="StopProcessSnagitEditor" Condition="BTN_PRESSED = &quot;IDYES&quot;" Sequence="83"/>
+    <ROW Action="AI_DATA_SETTER_2" Condition="BTN_PRESSED = &quot;IDYES&quot;" Sequence="82"/>
+    <ROW Action="DetectSnagit32" Sequence="78"/>
+    <ROW Action="AI_DATA_SETTER_3" Sequence="77"/>
+    <ROW Action="StopProcessSnagit32" Condition="BTN_PRESSED = &quot;IDYES&quot;" Sequence="85"/>
+    <ROW Action="AI_DATA_SETTER_4" Condition="BTN_PRESSED = &quot;IDYES&quot;" Sequence="84"/>
+    <ROW Action="SetSnagitEditorRunningProperty" Condition="AI_PROCESS_STATE = &quot;Running&quot;" Sequence="76"/>
+    <ROW Action="SetSnagit32RunningProperty" Condition="AI_PROCESS_STATE = &quot;Running&quot;" Sequence="79"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="(AI_DOTNET40_SEARCH = &quot;#1&quot;) OR (AI_DOTNET45_SEARCH &gt;= &quot;4.5&quot;) OR (AI_DOTNET451_SEARCH = &quot;#378758&quot;) OR (AI_DOTNET451_SEARCH = &quot;#378675&quot;)" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_MINDOTNETVERSION]" DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>

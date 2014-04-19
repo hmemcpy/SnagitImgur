@@ -1,5 +1,6 @@
 using System;
 using System.IO;
+using System.IO.IsolatedStorage;
 using System.Net;
 using System.Threading.Tasks;
 using RestSharp;
@@ -27,14 +28,14 @@ namespace SnagitImgur.Plugin.ImageService
         /// <param name="imagePath">Path to the image file.</param>
         /// <returns>A <c>Task</c> object containing the <see cref="ImageInfo"/>.</returns>
         /// <exception cref="WebException">Thrown if imgur.com returns any status code other than <see cref="HttpStatusCode.OK"/>.</exception>
-        public async Task<ImageInfo> UploadAsync(string imagePath)
+        public Task<ImageInfo> UploadAsync(string imagePath)
         {
             // http://api.imgur.com/endpoints/image#image-upload
 
             var request = new RestRequest("image", Method.POST);
             request.AddParameter("image", Convert.ToBase64String(File.ReadAllBytes(imagePath)), ParameterType.RequestBody);
 
-            dynamic uploadResponse = await client.ExecuteAsyncTask<dynamic>(request, response =>
+            return client.ExecuteAsyncTask<dynamic>(request, response =>
             {
                 if (response.StatusCode == HttpStatusCode.OK)
                 {
@@ -42,14 +43,17 @@ namespace SnagitImgur.Plugin.ImageService
                 }
 
                 throw new WebException(response.Content);
-            });
-
-            return new ImageInfo
+            }).ContinueWith(previousTask =>
             {
-                Id = uploadResponse.data.id,
-                Url = uploadResponse.data.link,
-                DeleteHash = uploadResponse.data.deletehash,
-            };
+                dynamic uploadResponse = previousTask.Result;
+
+                return new ImageInfo
+                {
+                    Id = uploadResponse.data.id,
+                    Url = uploadResponse.data.link,
+                    DeleteHash = uploadResponse.data.deletehash,
+                };
+            });
         }
     }
 

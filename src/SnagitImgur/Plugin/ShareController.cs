@@ -1,8 +1,9 @@
 using System;
 using System.Diagnostics;
 using System.IO;
-using System.Net;
+using System.Threading;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 using SnagitImgur.Plugin.ImageService;
 using SNAGITLib;
 
@@ -19,25 +20,40 @@ namespace SnagitImgur.Plugin
             asyncOutput = snagitHost as ISnagItAsyncOutput;
         }
 
-        public async Task ShareImage(IImageService service)
+        public void ShareImage(IImageService service)
         {
-            StartAsyncOutput();
-
             string imagePath = GetCapturedImage();
-            try
+            SynchronizationContext.SetSynchronizationContext(new SynchronizationContext());
+            var worker = Task.Factory.StartNew(() =>
             {
-                ImageInfo result = await service.UploadAsync(imagePath);
-                Process.Start(result.Url);
-            }
-            catch (WebException we)
-            {
+                StartAsyncOutput();
+                var uploadTask = service.UploadAsync(imagePath);
+                uploadTask.ContinueWith(task => HandleError(task.Exception), 
+                    TaskContinuationOptions.AttachedToParent | TaskContinuationOptions.OnlyOnFaulted);
+                return uploadTask.Result;
+            });
+            worker.ContinueWith(previousTask => HandleResult(previousTask.Result),
+                CancellationToken.None,
+                TaskContinuationOptions.OnlyOnRanToCompletion,
+                TaskScheduler.FromCurrentSynchronizationContext())
+                .ContinueWith(task =>
+                {
+                    FinishAsyncOutput();
+                    File.Delete(imagePath);
+                });
+        }
 
-            }
-            finally
+        private void HandleError(AggregateException ae)
+        {
+            if (ae.InnerException != null)
             {
-                FinishAsyncOutput();
-                File.Delete(imagePath);
+                MessageBox.Show("An error occurred while uploading the image to imgur.com");
             }
+        }
+
+        private void HandleResult(ImageInfo result)
+        {
+            Process.Start(result.Url);
         }
 
         private void StartAsyncOutput()

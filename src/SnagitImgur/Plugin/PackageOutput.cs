@@ -24,18 +24,10 @@ namespace SnagitImgur.Plugin
             shareController = new ShareController(snagitHost);
         }
 
-        public async void Output()
+        public void Output()
         {
             IImageService imageService = GetSelectedImageService();
-            try
-            {
-                await shareController.ShareImage(imageService);
-            }
-            catch (Exception)
-            {
-                // todo fix this
-                MessageBox.Show("an error occurred!");
-            }
+            shareController.ShareImage(imageService);
         }
 
         private IImageService GetSelectedImageService()

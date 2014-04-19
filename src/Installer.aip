@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<DOCUMENT Type="Advanced Installer" CreateVersion="10.9" version="10.9" Modules="professional" RootPath="." Language="en" Id="{4A165E2C-9C59-455D-AC72-8DFD45382697}">
+<DOCUMENT Type="Advanced Installer" CreateVersion="10.9" version="10.9.1" Modules="professional" RootPath="." Language="en" Id="{4A165E2C-9C59-455D-AC72-8DFD45382697}">
   <COMPONENT cid="caphyon.advinst.msicomp.MsiPropsComponent">
     <ROW Property="AI_BITMAP_DISPLAY_MODE" Value="0"/>
     <ROW Property="AI_MINDOTNETVERSION" MultiBuildValue="DefaultBuild:4.0" ValueLocId="-"/>
@@ -10,12 +10,13 @@
     <ROW Property="ARPNOMODIFY" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="ARPPRODUCTICON" Value="imgur.com.exe" Type="8"/>
     <ROW Property="ARPURLINFOABOUT" Value="https://github.com/hmemcpy/SnagitImgur"/>
+    <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="MSIFASTINSTALL" MultiBuildValue="DefaultBuild:7"/>
     <ROW Property="Manufacturer" Value="Igal Tabachnik"/>
-    <ROW Property="ProductCode" Value="1033:{6C38ACE8-1EA1-491A-B186-3E194C523D8B} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{5270E05F-6302-4C28-AB0C-DF2C1F411BD8} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Imgur plugin for Snagit"/>
-    <ROW Property="ProductVersion" Value="1.0.0" Type="32"/>
+    <ROW Property="ProductVersion" Value="1.0.1" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{80886ACD-A6AC-44F2-A8CC-81EA74E66483}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -28,42 +29,55 @@
     <ROW Directory="TARGETDIR" DefaultDir="SourceDir"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCompsComponent">
-    <ROW Component="Assembly" ComponentId="{3FA4755C-0F5F-4968-A022-9CFB2BB1F131}" Directory_="APPDIR" Attributes="4" KeyPath="Assembly_8"/>
-    <ROW Component="C8FE654EBB45E7B4406E39B2CDBF29" ComponentId="{35A0268E-9A64-4818-B786-4B1086A666B5}" Directory_="APPDIR" Attributes="260" KeyPath="C8FE654EBB45E7B4406E39B2CDBF29_6"/>
+    <ROW Component="Assembly" ComponentId="{BD4D473C-ADD6-471F-A976-235A8F2D0078}" Directory_="APPDIR" Attributes="4" KeyPath="Assembly"/>
+    <ROW Component="Assembly_5" ComponentId="{5DCA0648-355B-41CF-B8A2-49C6338EAA6E}" Directory_="APPDIR" Attributes="4" KeyPath="Assembly_32"/>
+    <ROW Component="Assembly_6" ComponentId="{820E8736-EFCD-4D70-BC0F-4761005756D9}" Directory_="APPDIR" Attributes="4" KeyPath="Assembly_33"/>
+    <ROW Component="Assembly_7" ComponentId="{D4DB2690-4D0A-47D8-B264-00D06572C86A}" Directory_="APPDIR" Attributes="4" KeyPath="Assembly_34"/>
+    <ROW Component="C8FE654EBB45E7B4406E39B2CDBF29" ComponentId="{F82BD12F-F2F7-453D-8957-8A26A2FE2319}" Directory_="APPDIR" Attributes="4" KeyPath="C8FE654EBB45E7B4406E39B2CDBF29_2"/>
+    <ROW Component="C8FE654EBB45E7B4406E39B2CDBF29_1" ComponentId="{CD8C3481-B96D-48D9-A30F-DDEC0A5E2A36}" Directory_="APPDIR" Attributes="4" KeyPath="C8FE654EBB45E7B4406E39B2CDBF29_3"/>
+    <ROW Component="Class" ComponentId="{85238E20-C057-4C53-9450-3DDC1D6AF2D6}" Directory_="APPDIR" Attributes="4" KeyPath="Class"/>
+    <ROW Component="Class_5" ComponentId="{778BC2AB-08F0-484C-B80C-6A83230AA2CD}" Directory_="APPDIR" Attributes="4" KeyPath="Class_35"/>
+    <ROW Component="Class_6" ComponentId="{EF493AF5-E862-42CF-9B9B-5833363A140D}" Directory_="APPDIR" Attributes="4" KeyPath="Class_36"/>
+    <ROW Component="Class_7" ComponentId="{579CE40A-E07D-48FE-8CC2-5F16327E2001}" Directory_="APPDIR" Attributes="4" KeyPath="Class_37"/>
+    <ROW Component="CodeBase" ComponentId="{643EFA94-2725-48E8-82A9-B9DE6354CE18}" Directory_="APPDIR" Attributes="4" KeyPath="CodeBase_34"/>
+    <ROW Component="CodeBase_1" ComponentId="{3CEC6CA1-ACD0-4C2E-A293-D734A7F7EC19}" Directory_="APPDIR" Attributes="4" KeyPath="CodeBase_35"/>
+    <ROW Component="CodeBase_2" ComponentId="{B186B5EA-3819-4A36-BC0E-1E9A9231ECB2}" Directory_="APPDIR" Attributes="4" KeyPath="CodeBase_36"/>
+    <ROW Component="CodeBase_3" ComponentId="{1E133BEE-36DD-46BF-9D8A-47E6B44F8D7B}" Directory_="APPDIR" Attributes="4" KeyPath="CodeBase_37"/>
     <ROW Component="JsonFx.dll" ComponentId="{6EF9E48A-E617-4235-8FAE-19A4712C2E76}" Directory_="APPDIR" Attributes="0" KeyPath="JsonFx.dll"/>
-    <ROW Component="Microsoft.Threading.Tasks.Extensions.Des" ComponentId="{E4135524-510F-466E-B08A-EC64BA2BE320}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Threading.Tasks.Extensions.Desktop.dll"/>
-    <ROW Component="Microsoft.Threading.Tasks.Extensions.dll" ComponentId="{5C1F73E2-C866-43A4-8609-FC13D999ECC2}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Threading.Tasks.Extensions.dll"/>
-    <ROW Component="Microsoft.Threading.Tasks.dll" ComponentId="{545233AC-ECB7-4F2F-9832-4047C3B62D73}" Directory_="APPDIR" Attributes="0" KeyPath="Microsoft.Threading.Tasks.dll"/>
     <ROW Component="RestSharp.dll" ComponentId="{8CBC0240-6DB6-42EF-B3AE-202ECCB2BCF3}" Directory_="APPDIR" Attributes="0" KeyPath="RestSharp.dll"/>
-    <ROW Component="SnagitImgur.dll" ComponentId="{704B788A-3034-4495-B492-B4D99CC854C8}" Directory_="APPDIR" Attributes="256" KeyPath="SnagitImgur.dll"/>
-    <ROW Component="System.IO.dll" ComponentId="{074EE7D3-6562-4E62-A649-7A796CFD8670}" Directory_="APPDIR" Attributes="0" KeyPath="System.IO.dll"/>
-    <ROW Component="System.Runtime.dll" ComponentId="{31E27B39-6F28-452A-8BC2-F55220A2049D}" Directory_="APPDIR" Attributes="0" KeyPath="System.Runtime.dll"/>
-    <ROW Component="System.Threading.Tasks.dll" ComponentId="{39AE7852-8DE3-4FEC-8F5F-897A4837A016}" Directory_="APPDIR" Attributes="0" KeyPath="System.Threading.Tasks.dll"/>
-    <ROW Component="__32" ComponentId="{5E629164-D0DF-4A6E-B2D8-1D4E6E457C12}" Directory_="APPDIR" Attributes="4" KeyPath="__71"/>
-    <ROW Component="__37" ComponentId="{06231595-BAF7-4656-9C03-A8899B93D1A7}" Directory_="APPDIR" Attributes="4" KeyPath="__77"/>
+    <ROW Component="RuntimeVersion" ComponentId="{0FC8D20E-D13B-45DC-8E58-D44C1520B0A4}" Directory_="APPDIR" Attributes="4" KeyPath="RuntimeVersion"/>
+    <ROW Component="RuntimeVersion_5" ComponentId="{09356330-93A5-4BEB-A231-0B4748A07265}" Directory_="APPDIR" Attributes="4" KeyPath="RuntimeVersion_35"/>
+    <ROW Component="RuntimeVersion_6" ComponentId="{B008DA77-97F3-4B71-9E2D-D434388382A6}" Directory_="APPDIR" Attributes="4" KeyPath="RuntimeVersion_36"/>
+    <ROW Component="RuntimeVersion_7" ComponentId="{43D6949E-97D5-4EF9-B0AD-69479E644E68}" Directory_="APPDIR" Attributes="4" KeyPath="RuntimeVersion_37"/>
+    <ROW Component="SnagitImgur.dll" ComponentId="{704B788A-3034-4495-B492-B4D99CC854C8}" Directory_="APPDIR" Attributes="0" KeyPath="SnagitImgur.dll"/>
+    <ROW Component="ThreadingModel" ComponentId="{3744CE93-15FF-45C4-AC86-2B1D5472F785}" Directory_="APPDIR" Attributes="4" KeyPath="ThreadingModel"/>
+    <ROW Component="ThreadingModel_2" ComponentId="{5A2FC930-7647-40E4-957F-FE99A1C9A8E4}" Directory_="APPDIR" Attributes="4" KeyPath="ThreadingModel_12"/>
+    <ROW Component="_" ComponentId="{3AB640E9-5551-48E2-A0EF-B72FE861AAE2}" Directory_="APPDIR" Attributes="4" KeyPath="_"/>
+    <ROW Component="__10" ComponentId="{E11DE324-F897-4140-A25F-2EFB438488D1}" Directory_="APPDIR" Attributes="4" KeyPath="__124"/>
+    <ROW Component="__11" ComponentId="{AAD1CBA7-6878-46F4-8504-74DEDB14BA4E}" Directory_="APPDIR" Attributes="4" KeyPath="__125"/>
+    <ROW Component="__12" ComponentId="{E95C91F8-FABF-4651-8308-A57B47921EAE}" Directory_="APPDIR" Attributes="4" KeyPath="__126"/>
+    <ROW Component="__13" ComponentId="{FA0E62AD-EEA7-4DB7-8AAE-9F3927059364}" Directory_="APPDIR" Attributes="4" KeyPath="__128"/>
+    <ROW Component="__14" ComponentId="{1060219F-9B53-43EA-AFC1-8DA742FDE0BE}" Directory_="APPDIR" Attributes="4" KeyPath="__129"/>
+    <ROW Component="__15" ComponentId="{5E5C8C3C-A028-436E-A95F-B11D50EF7F97}" Directory_="APPDIR" Attributes="4" KeyPath="__130"/>
+    <ROW Component="__16" ComponentId="{211A1B91-6E75-4F91-ADD8-E2F7A28C4B42}" Directory_="APPDIR" Attributes="4" KeyPath="__131"/>
+    <ROW Component="__4" ComponentId="{8FB45E9F-22F9-4C93-9F0F-18950C0F155C}" Directory_="APPDIR" Attributes="4" KeyPath="__117"/>
+    <ROW Component="__9" ComponentId="{ED7F8547-A3CC-4215-A597-5A0AD5C35B9B}" Directory_="APPDIR" Attributes="4" KeyPath="__123"/>
     <ROW Component="imgur.com.ico" ComponentId="{439FC293-82D6-4D9B-BAC0-B7773B7DA8C3}" Directory_="APPDIR" Attributes="0" KeyPath="imgur.com.ico" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
-    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="Assembly C8FE654EBB45E7B4406E39B2CDBF29 JsonFx.dll Microsoft.Threading.Tasks.Extensions.Des Microsoft.Threading.Tasks.Extensions.dll Microsoft.Threading.Tasks.dll RestSharp.dll SnagitImgur.dll System.IO.dll System.Runtime.dll System.Threading.Tasks.dll __32 __37 imgur.com.ico"/>
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="Assembly Assembly_5 Assembly_6 Assembly_7 C8FE654EBB45E7B4406E39B2CDBF29 C8FE654EBB45E7B4406E39B2CDBF29_1 Class Class_5 Class_6 Class_7 CodeBase CodeBase_1 CodeBase_2 CodeBase_3 JsonFx.dll RestSharp.dll RuntimeVersion RuntimeVersion_5 RuntimeVersion_6 RuntimeVersion_7 SnagitImgur.dll ThreadingModel ThreadingModel_2 _ __10 __11 __12 __13 __14 __15 __16 __4 __9 imgur.com.ico"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
-    <ROW File="JsonFx.dll" Component_="JsonFx.dll" FileName="JsonFx.dll" Attributes="0" SourcePath="..\output\Release\JsonFx.dll" SelfReg="false" NextFile="Microsoft.Threading.Tasks.dll"/>
-    <ROW File="Microsoft.Threading.Tasks.Extensions.Desktop.dll" Component_="Microsoft.Threading.Tasks.Extensions.Des" FileName="MICROS~2.DLL|Microsoft.Threading.Tasks.Extensions.Desktop.dll" Attributes="0" SourcePath="..\output\Release\Microsoft.Threading.Tasks.Extensions.Desktop.dll" SelfReg="false" NextFile="Microsoft.Threading.Tasks.Extensions.dll"/>
-    <ROW File="Microsoft.Threading.Tasks.Extensions.dll" Component_="Microsoft.Threading.Tasks.Extensions.dll" FileName="MICROS~3.DLL|Microsoft.Threading.Tasks.Extensions.dll" Attributes="0" SourcePath="..\output\Release\Microsoft.Threading.Tasks.Extensions.dll" SelfReg="false" NextFile="Package.xml"/>
-    <ROW File="Microsoft.Threading.Tasks.dll" Component_="Microsoft.Threading.Tasks.dll" FileName="MICROS~1.DLL|Microsoft.Threading.Tasks.dll" Attributes="0" SourcePath="..\output\Release\Microsoft.Threading.Tasks.dll" SelfReg="false" NextFile="Microsoft.Threading.Tasks.Extensions.Desktop.dll"/>
+    <ROW File="JsonFx.dll" Component_="JsonFx.dll" FileName="JsonFx.dll" Attributes="0" SourcePath="..\output\Release\JsonFx.dll" SelfReg="false" NextFile="Package.xml"/>
     <ROW File="Package.xml" Component_="imgur.com.ico" FileName="Package.xml" Attributes="0" SourcePath="..\output\Release\Package.xml" SelfReg="false" NextFile="RestSharp.dll"/>
-    <ROW File="RestSharp.dll" Component_="RestSharp.dll" FileName="RESTSH~1.DLL|RestSharp.dll" Attributes="0" SourcePath="..\output\Release\RestSharp.dll" SelfReg="false" NextFile="SnagitImgur.dll.config"/>
-    <ROW File="SnagitImgur.Output.xml" Component_="imgur.com.ico" FileName="SNAGIT~1.XML|SnagitImgur.Output.xml" Attributes="0" SourcePath="..\output\Release\SnagitImgur.Output.xml" SelfReg="false" NextFile="System.IO.dll"/>
-    <ROW File="SnagitImgur.dll" Component_="SnagitImgur.dll" FileName="SNAGIT~1.DLL|SnagitImgur.dll" Attributes="0" SourcePath="..\output\Release\SnagitImgur.dll" SelfReg="dotNetComInterop" RegSynch="on" NextFile="imgur.com.ico"/>
-    <ROW File="SnagitImgur.dll.config" Component_="imgur.com.ico" FileName="SNAGIT~1.CON|SnagitImgur.dll.config" Attributes="0" SourcePath="..\output\Release\SnagitImgur.dll.config" SelfReg="false" NextFile="SnagitImgur.Output.xml"/>
-    <ROW File="System.IO.dll" Component_="System.IO.dll" FileName="SYSTEM~1.DLL|System.IO.dll" Attributes="0" SourcePath="..\output\Release\System.IO.dll" SelfReg="false" NextFile="System.Runtime.dll"/>
-    <ROW File="System.Runtime.dll" Component_="System.Runtime.dll" FileName="SYSTEM~2.DLL|System.Runtime.dll" Attributes="0" SourcePath="..\output\Release\System.Runtime.dll" SelfReg="false" NextFile="System.Threading.Tasks.dll"/>
-    <ROW File="System.Threading.Tasks.dll" Component_="System.Threading.Tasks.dll" FileName="SYSTEM~3.DLL|System.Threading.Tasks.dll" Attributes="0" SourcePath="..\output\Release\System.Threading.Tasks.dll" SelfReg="false"/>
+    <ROW File="RestSharp.dll" Component_="RestSharp.dll" FileName="RESTSH~1.DLL|RestSharp.dll" Attributes="0" SourcePath="..\output\Release\RestSharp.dll" SelfReg="false" NextFile="SnagitImgur.Output.xml"/>
+    <ROW File="SnagitImgur.Output.xml" Component_="imgur.com.ico" FileName="SNAGIT~1.XML|SnagitImgur.Output.xml" Attributes="0" SourcePath="..\output\Release\SnagitImgur.Output.xml" SelfReg="false"/>
+    <ROW File="SnagitImgur.dll" Component_="SnagitImgur.dll" FileName="SNAGIT~1.DLL|SnagitImgur.dll" Attributes="0" SourcePath="..\output\Release\SnagitImgur.dll" SelfReg="false" NextFile="imgur.com.ico"/>
     <ROW File="imgur.com.ico" Component_="imgur.com.ico" FileName="IMGURC~1.ICO|imgur.com.ico" Attributes="0" SourcePath="..\output\Release\imgur.com.ico" SelfReg="false" NextFile="JsonFx.dll"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.BuildComponent">
-    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="..\output" PackageFileName="SnagitImgur_[|ProductVersion]" Languages="en" InstallationType="4" UseLargeSchema="true"/>
+    <ROW BuildKey="DefaultBuild" BuildName="DefaultBuild" BuildOrder="1" BuildType="0" PackageFolder="..\output" PackageFileName="SnagitImgur_[|ProductVersion]" Languages="en" InstallationType="4" ExtUI="true" UseLargeSchema="true"/>
     <ATTRIBUTE name="CurrentBuild" value="DefaultBuild"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.CacheComponent">
@@ -129,18 +143,32 @@
     <ROW Dialog_="VerifyReadyDlg" Control_="Back" Event="NewDialog" Argument="PatchWelcomeDlg" Condition="AI_PATCH" Ordering="203"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiCustActComponent">
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH_ORIGINAL" Target="[AI_SETUPEXEPATH]"/>
+    <ROW Action="AI_DATA_SETTER" Type="51" Source="CustomActionData" Target="SnagitEditor.exe"/>
+    <ROW Action="AI_DATA_SETTER_1" Type="51" Source="CustomActionData" Target="Snagit is running. You need to close Snagit/SnagitEditor before installing this plugin.&#13;\n&#13;\nWould you like to close Snagit? |Default title |MB_YESNO,MB_ICONWARNING,MB_DEFBUTTON1|BTN_PRESSED|[CLIENTPROCESSID]"/>
+    <ROW Action="AI_DATA_SETTER_2" Type="51" Source="CustomActionData" Target="SnagitEditor.exe"/>
+    <ROW Action="AI_DATA_SETTER_3" Type="51" Source="CustomActionData" Target="Snagit32.exe"/>
+    <ROW Action="AI_DATA_SETTER_4" Type="51" Source="CustomActionData" Target="Snagit32.exe"/>
     <ROW Action="AI_DOWNGRADE" Type="19" Target="4010"/>
     <ROW Action="AI_DpiContentScale" Type="1" Source="aicustact.dll" Target="DpiContentScale"/>
     <ROW Action="AI_InstallModeCheck" Type="1" Source="aicustact.dll" Target="UpdateInstallMode" WithoutSeq="true"/>
     <ROW Action="AI_PREPARE_UPGRADE" Type="65" Source="aicustact.dll" Target="PrepareUpgrade"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Type="51" Source="AI_SETUPEXEPATH" Target="[AI_SETUPEXEPATH_ORIGINAL]"/>
     <ROW Action="AI_RESTORE_LOCATION" Type="65" Source="aicustact.dll" Target="RestoreLocation"/>
     <ROW Action="AI_ResolveKnownFolders" Type="1" Source="aicustact.dll" Target="AI_ResolveKnownFolders"/>
     <ROW Action="AI_ResolveLocalizedCredentials" Type="1" Source="aicustact.dll" Target="GetLocalizedCredentials"/>
     <ROW Action="AI_SHOW_LOG" Type="65" Source="aicustact.dll" Target="LaunchLogFile" WithoutSeq="true"/>
     <ROW Action="AI_STORE_LOCATION" Type="51" Source="ARPINSTALLLOCATION" Target="[APPDIR]"/>
+    <ROW Action="DetectSnagit32" Type="1" Source="aicustact.dll" Target="DetectProcess" Options="1" AdditionalSeq="AI_DATA_SETTER_3"/>
+    <ROW Action="DetectSnagitEditor" Type="1" Source="aicustact.dll" Target="DetectProcess" Options="1" AdditionalSeq="AI_DATA_SETTER"/>
+    <ROW Action="MessageBox" Type="1" Source="aicustact.dll" Target="MsgBox" Options="1" AdditionalSeq="AI_DATA_SETTER_1"/>
     <ROW Action="SET_APPDIR" Type="307" Source="APPDIR" Target="[ProgramFilesFolder][Manufacturer]\[ProductName]" MultiBuildTarget="DefaultBuild:[SNAGIT_ACCESSORIES_DIR]\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}"/>
     <ROW Action="SET_SHORTCUTDIR" Type="307" Source="SHORTCUTDIR" Target="[ProgramMenuFolder][ProductName]" MultiBuildTarget="DefaultBuild:[SNAGIT_ACCESSORIES_DIR]\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}"/>
     <ROW Action="SET_TARGETDIR_TO_APPDIR" Type="51" Source="TARGETDIR" Target="[APPDIR]"/>
+    <ROW Action="SetSnagit32RunningProperty" Type="51" Source="Snagit32Running" Target="True"/>
+    <ROW Action="SetSnagitEditorRunningProperty" Type="51" Source="SnagitEditorRunning" Target="True"/>
+    <ROW Action="StopProcessSnagit32" Type="1" Source="aicustact.dll" Target="StopProcess" Options="1" AdditionalSeq="AI_DATA_SETTER_4"/>
+    <ROW Action="StopProcessSnagitEditor" Type="1" Source="aicustact.dll" Target="StopProcess" Options="1" AdditionalSeq="AI_DATA_SETTER_2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiDrLocatorComponent">
     <ROW Signature_="AppSearchSign" Path="[LocalAppDataFolder]\TechSmith\Snagit\Accessories" Depth="0"/>
@@ -158,9 +186,23 @@
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiInstallUISequenceComponent">
     <ROW Action="AI_RESTORE_LOCATION" Condition="APPDIR=&quot;&quot;" Sequence="749"/>
-    <ROW Action="AI_ResolveKnownFolders" Sequence="53"/>
-    <ROW Action="AI_ResolveLocalizedCredentials" Sequence="52"/>
-    <ROW Action="AI_DpiContentScale" Sequence="51"/>
+    <ROW Action="AI_ResolveKnownFolders" Sequence="55"/>
+    <ROW Action="AI_ResolveLocalizedCredentials" Sequence="54"/>
+    <ROW Action="AI_DpiContentScale" Sequence="53"/>
+    <ROW Action="AI_BACKUP_AI_SETUPEXEPATH" Sequence="99"/>
+    <ROW Action="AI_RESTORE_AI_SETUPEXEPATH" Condition="AI_SETUPEXEPATH_ORIGINAL" Sequence="101"/>
+    <ROW Action="DetectSnagitEditor" Sequence="52"/>
+    <ROW Action="AI_DATA_SETTER" Sequence="51"/>
+    <ROW Action="MessageBox" Condition="SnagitEditorRunning = &quot;True&quot; OR Snagit32Running = &quot;True&quot;" Sequence="81"/>
+    <ROW Action="AI_DATA_SETTER_1" Condition="SnagitEditorRunning = &quot;True&quot; OR Snagit32Running = &quot;True&quot;" Sequence="80"/>
+    <ROW Action="StopProcessSnagitEditor" Condition="BTN_PRESSED = &quot;IDYES&quot;" Sequence="83"/>
+    <ROW Action="AI_DATA_SETTER_2" Condition="BTN_PRESSED = &quot;IDYES&quot;" Sequence="82"/>
+    <ROW Action="DetectSnagit32" Sequence="78"/>
+    <ROW Action="AI_DATA_SETTER_3" Sequence="77"/>
+    <ROW Action="StopProcessSnagit32" Condition="BTN_PRESSED = &quot;IDYES&quot;" Sequence="85"/>
+    <ROW Action="AI_DATA_SETTER_4" Condition="BTN_PRESSED = &quot;IDYES&quot;" Sequence="84"/>
+    <ROW Action="SetSnagitEditorRunningProperty" Condition="AI_PROCESS_STATE = &quot;Running&quot;" Sequence="76"/>
+    <ROW Action="SetSnagit32RunningProperty" Condition="AI_PROCESS_STATE = &quot;Running&quot;" Sequence="79"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiLaunchConditionsComponent">
     <ROW Condition="(AI_DOTNET40_SEARCH = &quot;#1&quot;) OR (AI_DOTNET45_SEARCH &gt;= &quot;4.5&quot;) OR (AI_DOTNET451_SEARCH = &quot;#378758&quot;) OR (AI_DOTNET451_SEARCH = &quot;#378675&quot;)" Description="[ProductName] cannot be installed on systems with .NET Framework version lower than [AI_MINDOTNETVERSION]" DescriptionLocId="AI.LaunchCondition.DotNET" IsPredefined="true" Builds="DefaultBuild"/>
@@ -173,39 +215,36 @@
     <ROW Signature_="AI_DotNet45SearchSgn" Root="2" Key="SOFTWARE\Microsoft\NET Framework Setup\NDP\v4\Full" Name="Version" Type="2"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiRegsComponent">
-    <ROW Registry="Assembly" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32" Name="Assembly" Value="SnagitImgur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6" Component_="SnagitImgur.dll"/>
-    <ROW Registry="Assembly_11" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32\1.0.0.0" Name="Assembly" Value="SnagitImgur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6" Component_="SnagitImgur.dll"/>
-    <ROW Registry="Assembly_12" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\1.0.0.0" Name="Assembly" Value="SnagitImgur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6" Component_="SnagitImgur.dll"/>
-    <ROW Registry="Assembly_8" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="Assembly" Value="SnagitImgur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6" Component_="Assembly"/>
-    <ROW Registry="C8FE654EBB45E7B4406E39B2CDBF29" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" Name="+" Component_="SnagitImgur.dll"/>
-    <ROW Registry="C8FE654EBB45E7B4406E39B2CDBF29_1" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" Name="+" Component_="SnagitImgur.dll"/>
-    <ROW Registry="C8FE654EBB45E7B4406E39B2CDBF29_6" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" Name="+" Component_="C8FE654EBB45E7B4406E39B2CDBF29"/>
-    <ROW Registry="Class" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32" Name="Class" Value="SnagitImgur.Plugin.Package" Component_="SnagitImgur.dll"/>
-    <ROW Registry="Class_11" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32\1.0.0.0" Name="Class" Value="SnagitImgur.Plugin.Package" Component_="SnagitImgur.dll"/>
-    <ROW Registry="Class_12" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="Class" Value="SnagitImgur.Plugin.PackageOutput" Component_="SnagitImgur.dll"/>
-    <ROW Registry="Class_13" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\1.0.0.0" Name="Class" Value="SnagitImgur.Plugin.PackageOutput" Component_="SnagitImgur.dll"/>
-    <ROW Registry="CodeBase" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32" Name="CodeBase" Value="file:///[#SnagitImgur.dll]" Component_="SnagitImgur.dll"/>
-    <ROW Registry="CodeBase_11" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32\1.0.0.0" Name="CodeBase" Value="file:///[#SnagitImgur.dll]" Component_="SnagitImgur.dll"/>
-    <ROW Registry="CodeBase_12" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="CodeBase" Value="file:///[#SnagitImgur.dll]" Component_="SnagitImgur.dll"/>
-    <ROW Registry="CodeBase_13" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\1.0.0.0" Name="CodeBase" Value="file:///[#SnagitImgur.dll]" Component_="SnagitImgur.dll"/>
-    <ROW Registry="RuntimeVersion" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Component_="SnagitImgur.dll"/>
-    <ROW Registry="RuntimeVersion_11" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32\1.0.0.0" Name="RuntimeVersion" Value="v4.0.30319" Component_="SnagitImgur.dll"/>
-    <ROW Registry="RuntimeVersion_12" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Component_="SnagitImgur.dll"/>
-    <ROW Registry="RuntimeVersion_13" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\1.0.0.0" Name="RuntimeVersion" Value="v4.0.30319" Component_="SnagitImgur.dll"/>
-    <ROW Registry="ThreadingModel" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32" Name="ThreadingModel" Value="Both" Component_="SnagitImgur.dll"/>
-    <ROW Registry="ThreadingModel_5" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="ThreadingModel" Value="Both" Component_="SnagitImgur.dll"/>
-    <ROW Registry="_" Root="0" Key="SnagitImgur.Plugin.Package" Value="SnagitImgur.Plugin.Package" Component_="SnagitImgur.dll"/>
-    <ROW Registry="__39" Root="0" Key="SnagitImgur.Plugin.Package\CLSID" Value="[\{]EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D[\}]" Component_="SnagitImgur.dll"/>
-    <ROW Registry="__40" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}" Value="SnagitImgur.Plugin.Package" Component_="SnagitImgur.dll"/>
-    <ROW Registry="__41" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32" Value="mscoree.dll" Component_="SnagitImgur.dll"/>
-    <ROW Registry="__43" Root="0" Key="CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\ProgId" Value="SnagitImgur.Plugin.Package" Component_="SnagitImgur.dll"/>
-    <ROW Registry="__44" Root="0" Key="SnagitImgur.Plugin.PackageOutput" Value="SnagitImgur.Plugin.PackageOutput" Component_="SnagitImgur.dll"/>
-    <ROW Registry="__45" Root="0" Key="SnagitImgur.Plugin.PackageOutput\CLSID" Value="[\{]681D1A5C-A78F-4D27-86A2-A07AAC89B8FE[\}]" Component_="SnagitImgur.dll"/>
-    <ROW Registry="__46" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}" Value="SnagitImgur.Plugin.PackageOutput" Component_="SnagitImgur.dll"/>
-    <ROW Registry="__47" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Value="mscoree.dll" Component_="SnagitImgur.dll"/>
-    <ROW Registry="__49" Root="0" Key="CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\ProgId" Value="SnagitImgur.Plugin.PackageOutput" Component_="SnagitImgur.dll"/>
-    <ROW Registry="__71" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\ProgId" Value="SnagitImgur.Plugin.Package" Component_="__32"/>
-    <ROW Registry="__77" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\ProgId" Value="SnagitImgur.Plugin.PackageOutput" Component_="__37"/>
+    <ROW Registry="Assembly" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32" Name="Assembly" Value="SnagitImgur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6" Component_="Assembly"/>
+    <ROW Registry="Assembly_32" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32\1.0.0.0" Name="Assembly" Value="SnagitImgur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6" Component_="Assembly_5"/>
+    <ROW Registry="Assembly_33" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="Assembly" Value="SnagitImgur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6" Component_="Assembly_6"/>
+    <ROW Registry="Assembly_34" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\1.0.0.0" Name="Assembly" Value="SnagitImgur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6" Component_="Assembly_7"/>
+    <ROW Registry="C8FE654EBB45E7B4406E39B2CDBF29_2" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" Name="+" Component_="C8FE654EBB45E7B4406E39B2CDBF29"/>
+    <ROW Registry="C8FE654EBB45E7B4406E39B2CDBF29_3" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" Name="+" Component_="C8FE654EBB45E7B4406E39B2CDBF29_1"/>
+    <ROW Registry="Class" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32" Name="Class" Value="SnagitImgur.Plugin.Package" Component_="Class"/>
+    <ROW Registry="Class_35" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32\1.0.0.0" Name="Class" Value="SnagitImgur.Plugin.Package" Component_="Class_5"/>
+    <ROW Registry="Class_36" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="Class" Value="SnagitImgur.Plugin.PackageOutput" Component_="Class_6"/>
+    <ROW Registry="Class_37" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\1.0.0.0" Name="Class" Value="SnagitImgur.Plugin.PackageOutput" Component_="Class_7"/>
+    <ROW Registry="CodeBase_34" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32" Name="CodeBase" Value="file:///[#SnagitImgur.dll]" Component_="CodeBase"/>
+    <ROW Registry="CodeBase_35" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32\1.0.0.0" Name="CodeBase" Value="file:///[#SnagitImgur.dll]" Component_="CodeBase_1"/>
+    <ROW Registry="CodeBase_36" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\1.0.0.0" Name="CodeBase" Value="file:///[#SnagitImgur.dll]" Component_="CodeBase_2"/>
+    <ROW Registry="CodeBase_37" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="CodeBase" Value="file:///[#SnagitImgur.dll]" Component_="CodeBase_3"/>
+    <ROW Registry="RuntimeVersion" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Component_="RuntimeVersion"/>
+    <ROW Registry="RuntimeVersion_35" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32\1.0.0.0" Name="RuntimeVersion" Value="v4.0.30319" Component_="RuntimeVersion_5"/>
+    <ROW Registry="RuntimeVersion_36" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Component_="RuntimeVersion_6"/>
+    <ROW Registry="RuntimeVersion_37" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\1.0.0.0" Name="RuntimeVersion" Value="v4.0.30319" Component_="RuntimeVersion_7"/>
+    <ROW Registry="ThreadingModel" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32" Name="ThreadingModel" Value="Both" Component_="ThreadingModel"/>
+    <ROW Registry="ThreadingModel_12" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Name="ThreadingModel" Value="Both" Component_="ThreadingModel_2"/>
+    <ROW Registry="_" Root="1" Key="Software\Classes\SnagitImgur.Plugin.Package" Value="SnagitImgur.Plugin.Package" Component_="_"/>
+    <ROW Registry="__117" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\ProgId" Value="SnagitImgur.Plugin.Package" Component_="__4"/>
+    <ROW Registry="__123" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\ProgId" Value="SnagitImgur.Plugin.PackageOutput" Component_="__9"/>
+    <ROW Registry="__124" Root="1" Key="Software\Classes\SnagitImgur.Plugin.Package\CLSID" Value="[\{]EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D[\}]" Component_="__10"/>
+    <ROW Registry="__125" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}" Value="SnagitImgur.Plugin.Package" Component_="__11"/>
+    <ROW Registry="__126" Root="1" Key="Software\Classes\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32" Value="mscoree.dll" Component_="__12"/>
+    <ROW Registry="__128" Root="1" Key="Software\Classes\SnagitImgur.Plugin.PackageOutput" Value="SnagitImgur.Plugin.PackageOutput" Component_="__13"/>
+    <ROW Registry="__129" Root="1" Key="Software\Classes\SnagitImgur.Plugin.PackageOutput\CLSID" Value="[\{]681D1A5C-A78F-4D27-86A2-A07AAC89B8FE[\}]" Component_="__14"/>
+    <ROW Registry="__130" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}" Value="SnagitImgur.Plugin.PackageOutput" Component_="__15"/>
+    <ROW Registry="__131" Root="1" Key="Software\Classes\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32" Value="mscoree.dll" Component_="__16"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiThemeComponent">
     <ATTRIBUTE name="UsedTheme" value="classic"/>

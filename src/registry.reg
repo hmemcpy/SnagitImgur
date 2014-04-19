@@ -13,12 +13,12 @@ REGEDIT4
 @="mscoree.dll"
 "ThreadingModel"="Both"
 "Class"="SnagitImgur.Plugin.Package"
-"Assembly"="SnagitImgur, Version=0.5.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6"
+"Assembly"="SnagitImgur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6"
 "RuntimeVersion"="v4.0.30319"
 
-[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32\0.5.0.0]
+[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\InprocServer32\1.0.0.0]
 "Class"="SnagitImgur.Plugin.Package"
-"Assembly"="SnagitImgur, Version=0.5.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6"
+"Assembly"="SnagitImgur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6"
 "RuntimeVersion"="v4.0.30319"
 
 [HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{EDA9F1DD-85B9-44F6-9D3C-125B2DD1109D}\ProgId]
@@ -39,12 +39,12 @@ REGEDIT4
 @="mscoree.dll"
 "ThreadingModel"="Both"
 "Class"="SnagitImgur.Plugin.PackageOutput"
-"Assembly"="SnagitImgur, Version=0.5.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6"
+"Assembly"="SnagitImgur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6"
 "RuntimeVersion"="v4.0.30319"
 
-[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\0.5.0.0]
+[HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\InprocServer32\1.0.0.0]
 "Class"="SnagitImgur.Plugin.PackageOutput"
-"Assembly"="SnagitImgur, Version=0.5.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6"
+"Assembly"="SnagitImgur, Version=1.0.0.0, Culture=neutral, PublicKeyToken=4f0394abfbde9de6"
 "RuntimeVersion"="v4.0.30319"
 
 [HKEY_CURRENT_USER\Software\Classes\Wow6432Node\CLSID\{681D1A5C-A78F-4D27-86A2-A07AAC89B8FE}\ProgId]

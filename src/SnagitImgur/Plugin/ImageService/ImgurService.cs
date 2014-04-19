@@ -1,6 +1,5 @@
 using System;
 using System.IO;
-using System.IO.IsolatedStorage;
 using System.Net;
 using System.Threading.Tasks;
 using RestSharp;
@@ -16,10 +15,9 @@ namespace SnagitImgur.Plugin.ImageService
         private const string apiBaseUrl = "https://api.imgur.com/3/";
         private readonly IRestClient client;
 
-        public ImgurService(string clientId)
+        public ImgurService(IAuthenticator requestAuthenticator)
         {
-            client = new RestClient(apiBaseUrl);
-            client.AddDefaultHeader("Authorization", "Client-ID " + clientId);
+            client = new RestClient(apiBaseUrl) { Authenticator = requestAuthenticator };
         }
 
         /// <summary>
@@ -28,7 +26,7 @@ namespace SnagitImgur.Plugin.ImageService
         /// <param name="imagePath">Path to the image file.</param>
         /// <returns>A <c>Task</c> object containing the <see cref="ImageInfo"/>.</returns>
         /// <exception cref="WebException">Thrown if imgur.com returns any status code other than <see cref="HttpStatusCode.OK"/>.</exception>
-        public Task<ImageInfo> UploadAsync(string imagePath)
+        public Task<ImageInfo> UploadImage(string imagePath)
         {
             // http://api.imgur.com/endpoints/image#image-upload
 

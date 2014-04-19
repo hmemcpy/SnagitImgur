@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<output buttontype="buttonmenu">
+<output buttontype="splitbuttonmenu">
   <shorttitle>Imgur</shorttitle>
   <longtitle>Imgur Output</longtitle>
   <description>Send to imgur.com</description>

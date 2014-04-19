@@ -28,7 +28,7 @@ namespace SnagitImgur.Plugin
             var worker = Task.Factory.StartNew(() =>
             {
                 StartAsyncOutput();
-                var uploadTask = service.UploadAsync(imagePath);
+                var uploadTask = service.UploadImage(imagePath);
                 uploadTask.ContinueWith(task => HandleError(task.Exception), 
                     TaskContinuationOptions.AttachedToParent | TaskContinuationOptions.OnlyOnFaulted);
                 return uploadTask.Result;

@@ -2,7 +2,9 @@ using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using RestSharp;
 using SnagitImgur.Plugin.ImageService;
+using SnagitImgur.Properties;
 using SNAGITLib;
 
 namespace SnagitImgur.Plugin
@@ -10,7 +12,7 @@ namespace SnagitImgur.Plugin
     [ComVisible(true)]
     [ClassInterface(ClassInterfaceType.None)]
     [Guid("681D1A5C-A78F-4D27-86A2-A07AAC89B8FE")]
-    public class PackageOutput : MarshalByRefObject, IComponentInitialize, IOutput, IComponentWantsCategoryPreferences
+    public class PackageOutput : MarshalByRefObject, IComponentInitialize, IOutput, IComponentWantsCategoryPreferences, IOutputMenu, IPackageOptionsUI
     {
         internal static string IconPath;
         private static string PackageDirectory;
@@ -36,11 +38,67 @@ namespace SnagitImgur.Plugin
 
         private IImageService GetSelectedImageService()
         {
-            // todo implement others
-            // todo move to config
-            return new ImgurService("d9c6c0bfd99b470");
+            return new ImgurService(
+                CreateAuthenticator(Settings.Default)
+                );
         }
 
+        private IAuthenticator CreateAuthenticator(Settings settings)
+        {
+            if (!string.IsNullOrWhiteSpace(settings.OAuthToken))
+            {
+                return new OAuth2AuthorizationRequestHeaderAuthenticator(settings.OAuthToken, "Bearer");
+            }
+
+            return new AnonymousClientAuthenticator(settings.ClientID);
+        }
+
+        public string GetOutputMenuData()
+        {
+            return "<menu> " +
+                      "<menuitem label=\"Send to imgur.com\" id=\"1\" />" +
+                      "<menuseparator />" +
+                      "<menuitem label=\"Account...\" id=\"2\" />" +
+                      "<menuitem label=\"Options...\" id=\"3\" />" +
+                      "<menuitem label=\"About\" id=\"4\" />" +
+                   "</menu>";
+        }
+		
+        public void SelectOutputMenuItem(string id)
+        {
+            switch (id)
+            {
+                case "1":
+                    Output();
+                    break;
+                case "2":
+                    ShowAccount();
+                    break;
+                case "3":
+                    ShowPackageOptionsUI();
+                    break;
+                case "4":
+                    ShowAbout();
+                    break;
+            }
+        }
+
+        private void ShowAccount()
+        {
+            
+        }
+
+        private void ShowAbout()
+        {
+            MessageBox.Show("About");
+
+        }
+
+        public void ShowPackageOptionsUI()
+        {
+            MessageBox.Show("Settings");
+            
+        }
         public void SetComponentCategoryPreferences(SnagItOutputPreferences prefs)
         {
             PackageDirectory = prefs.PackageDir;

@@ -2,7 +2,9 @@ using System;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
+using CommonUtilAssembly;
 using RestSharp;
+using SnagitImgur.Dialogs;
 using SnagitImgur.Plugin.ImageService;
 using SnagitImgur.Properties;
 using SNAGITLib;
@@ -16,7 +18,7 @@ namespace SnagitImgur.Plugin
     {
         internal static string IconPath;
         private static string PackageDirectory;
-
+        private IWin32Window snagitWindow;
         private ShareController shareController;
 
         public void InitializeComponent(object pExtensionHost, IComponent pComponent, componentInitializeType initType)
@@ -27,6 +29,7 @@ namespace SnagitImgur.Plugin
                 throw new InvalidOperationException("Unable to communicate with Snagit");
             }
 
+            snagitWindow = new Win32HWndWrapper(new IntPtr(snagitHost.TopLevelHWnd));
             shareController = new ShareController(snagitHost);
         }
 
@@ -60,6 +63,7 @@ namespace SnagitImgur.Plugin
                       "<menuseparator />" +
                       "<menuitem label=\"Account...\" id=\"2\" />" +
                       "<menuitem label=\"Options...\" id=\"3\" />" +
+                      "<menuseparator />" +
                       "<menuitem label=\"About\" id=\"4\" />" +
                    "</menu>";
         }
@@ -72,7 +76,7 @@ namespace SnagitImgur.Plugin
                     Output();
                     break;
                 case "2":
-                    ShowAccount();
+                    ShowAccount(Settings.Default);
                     break;
                 case "3":
                     ShowPackageOptionsUI();
@@ -83,9 +87,21 @@ namespace SnagitImgur.Plugin
             }
         }
 
-        private void ShowAccount()
+        private void ShowAccount(Settings settings)
         {
-            
+            using (var accountForm = new AccountForm(new OAuthHelper(settings)))
+            {
+                var dialogResult = DialogResult.Retry;
+                while (dialogResult != DialogResult.Cancel)
+                {
+                    dialogResult = accountForm.ShowDialog(snagitWindow);
+                }
+            }
+        }
+
+        private bool IsAutenticated(Settings settings)
+        {
+            return !string.IsNullOrWhiteSpace(settings.OAuthToken);
         }
 
         private void ShowAbout()

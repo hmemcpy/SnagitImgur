@@ -56,7 +56,7 @@ namespace SnagitImgur.Plugin
         {
             Clipboard.SetText(result.Url);
 
-            ToasterWrapper.DisplayToaster("URL copied to clipboard!", "Click to open in browser", "", () => Process.Start(result.Url));
+            ToasterWrapper.DisplayToaster("URL copied to clipboard!", "Open in browser...", PackageOutput.IconPath, () => Process.Start(result.Url));
         }
 
         private void StartAsyncOutput()

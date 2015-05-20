@@ -40,6 +40,9 @@
     </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="CommonUtilAssembly">
+      <HintPath>..\..\lib\CommonUtilAssembly.dll</HintPath>
+    </Reference>
     <Reference Include="Interop.SNAGITLib">
       <HintPath>..\..\lib\Interop.SNAGITLib.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -69,6 +72,10 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="..\..\lib\CommonUtilDLL.dll">
+      <Link>CommonUtilDLL.dll</Link>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="imgur.com.ico">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

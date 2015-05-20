@@ -4,6 +4,7 @@ using System.IO;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CommonUtilAssembly;
 using SnagitImgur.Plugin.ImageService;
 using SNAGITLib;
 
@@ -23,7 +24,7 @@ namespace SnagitImgur.Plugin
         public void ShareImage(IImageService service)
         {
             string imagePath = GetCapturedImage();
-            SynchronizationContext.SetSynchronizationContext(new SynchronizationContext());
+            SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
             var worker = Task.Factory.StartNew(() =>
             {
                 StartAsyncOutput();
@@ -53,7 +54,9 @@ namespace SnagitImgur.Plugin
 
         private void HandleResult(ImageInfo result)
         {
-            Process.Start(result.Url);
+            Clipboard.SetText(result.Url);
+
+            ToasterWrapper.DisplayToaster("URL copied to clipboard!", "Click to open in browser", "", () => Process.Start(result.Url));
         }
 
         private void StartAsyncOutput()

@@ -1,5 +1,9 @@
 ﻿using System;
+using System.Collections.Specialized;
 using System.Diagnostics;
+using System.Net;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using SnagitImgur.Properties;
 
@@ -22,6 +26,8 @@ namespace SnagitImgur.Dialogs
             {
                 ShowAccountDetails();
             }
+
+            btnAuthenticate.Tag = "auth";
         }
 
         private void ShowAccountDetails()
@@ -62,12 +68,12 @@ namespace SnagitImgur.Dialogs
     public class OAuthHelper
     {
         private readonly Settings settings;
-        private const string clientId = "d9c6c0bfd99b470";
-        private const string clientSecret = "";
+        private readonly string clientId;
+        private readonly string clientSecret;
 
         public bool IsAuthenticated
         {
-            get { return false; }
+            get { return !string.IsNullOrWhiteSpace(settings.AccessToken); }
         }
 
         public string OAuthUrl { get; private set; }
@@ -75,23 +81,44 @@ namespace SnagitImgur.Dialogs
         public OAuthHelper(Settings settings)
         {
             this.settings = settings;
+            clientId = settings.ClientID;
+            clientSecret = settings.ClientSecret;
             OAuthUrl = string.Format("https://api.imgur.com/oauth2/authorize?client_id={0}&response_type=pin&state=", clientId);
         }
 
-
         public string GetAccountName()
         {
-            throw new NotImplementedException();
+            return settings.AccountUsername;
         }
 
-        public void Authenticate(string pin)
+        public async Task Authenticate(string pin)
         {
-            
+            using (var wc = new WebClient())
+            {
+                var c = new NameValueCollection();
+                c["client_id"] = clientId;
+                c["client_secret"] = clientSecret;
+                c["grant_type"] = "pin";
+                c["pin"] = pin;
+                byte[] result = await wc.UploadValuesTaskAsync("https://api.imgur.com/oauth2/token", "POST", c);
+                dynamic json = new JsonFx.Json.JsonReader().Read(Encoding.ASCII.GetString(result));
+
+                SaveValues(json);
+            }
+        }
+
+        private void SaveValues(dynamic json)
+        {
+            settings.AccessToken = json.access_token;
+            settings.RefreshToken = json.refresh_token;
+            settings.AccountID = json.account_id;
+            settings.AccountUsername = json.account_username;
+            settings.Save();
         }
 
         public void SignOut()
         {
-            throw new NotImplementedException();
+            
         }
 
         public void OpenAuthorizationPage()

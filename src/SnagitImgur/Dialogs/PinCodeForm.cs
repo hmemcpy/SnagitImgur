@@ -19,10 +19,10 @@ namespace SnagitImgur.Dialogs
             btnAccept.Enabled = txtPinCode.Text.Length > 0;
         }
 
-        private void btnAccept_Click(object sender, EventArgs e)
+        private async void btnAccept_Click(object sender, EventArgs e)
         {
             string pin = txtPinCode.Text.Trim();
-            oauthHelper.Authenticate(pin);
+            await oauthHelper.Authenticate(pin);
         }
     }
 }

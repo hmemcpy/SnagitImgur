@@ -48,9 +48,9 @@ namespace SnagitImgur.Plugin
 
         private IAuthenticator CreateAuthenticator(Settings settings)
         {
-            if (!string.IsNullOrWhiteSpace(settings.OAuthToken))
+            if (!string.IsNullOrWhiteSpace(settings.AccessToken))
             {
-                return new OAuth2AuthorizationRequestHeaderAuthenticator(settings.OAuthToken, "Bearer");
+                return new OAuth2AuthorizationRequestHeaderAuthenticator(settings.AccessToken, "Bearer");
             }
 
             return new AnonymousClientAuthenticator(settings.ClientID);
@@ -61,13 +61,13 @@ namespace SnagitImgur.Plugin
             return "<menu> " +
                       "<menuitem label=\"Send to imgur.com\" id=\"1\" />" +
                       "<menuseparator />" +
-                      "<menuitem label=\"Account...\" id=\"2\" />" +
-                      "<menuitem label=\"Options...\" id=\"3\" />" +
+                      "<menuitem label=\"Account\" id=\"2\" />" +
+                      "<menuitem label=\"Options\" id=\"3\" />" +
                       "<menuseparator />" +
                       "<menuitem label=\"About\" id=\"4\" />" +
                    "</menu>";
         }
-		
+
         public void SelectOutputMenuItem(string id)
         {
             switch (id)
@@ -101,7 +101,7 @@ namespace SnagitImgur.Plugin
 
         private bool IsAutenticated(Settings settings)
         {
-            return !string.IsNullOrWhiteSpace(settings.OAuthToken);
+            return !string.IsNullOrWhiteSpace(settings.AccessToken);
         }
 
         private void ShowAbout()

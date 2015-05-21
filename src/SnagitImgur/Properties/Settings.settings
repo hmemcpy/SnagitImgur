@@ -8,7 +8,16 @@
     <Setting Name="ClientSecret" Type="System.String" Scope="User">
       <Value Profile="(Default)">400faaac7a5203d7d9d7f551809e43caf4c3f7fb</Value>
     </Setting>
-    <Setting Name="OAuthToken" Type="System.String" Scope="User">
+    <Setting Name="AccessToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="RefreshToken" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="AccountID" Type="System.Int32" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="AccountUsername" Type="System.String" Scope="User">
       <Value Profile="(Default)" />
     </Setting>
   </Settings>

@@ -1,28 +1,26 @@
-## What is this?
-
 ![Snagit Imgur](http://i.imgur.com/g6aTS.png)
 
 A plugin ("accessory") for [TechSmith® Snagit®](http://www.techsmith.com/snagit.html) that allows sending captured images to online image sharing site [http://imgur.com](http://imgur.com).
 
 This plugin adds a button on the **Share** tab of the Image Editor, allowing you to upload the currently selected image to **Imgur**:
 
-![Snagit Toolbar](http://i.imgur.com/JjRl7.png)
-
-It is also added to the main menu:
-
-![Snagit Menu](http://i.imgur.com/ElZAZ.png)
-
-You can change the position of the **Imgur** button in the Editor Options.
+![Snagit Toolbar](http://i.imgur.com/hVtEmaA.png)
 
 ## Download and installation instructions
 
-1. [**Download the installer**](https://github.com/hmemcpy/SnagitImgur/releases/download/1.1/SnagitImgur_1.1.msi) (latest version: v1.1)
+1. [**Download the installer**](https://github.com/hmemcpy/SnagitImgur/releases/download/1.1/SnagitImgur_1.1.msi) (latest version: v1.2, supports Snagit 11 and 12)
 
 2. Exit Snagit (and Snagit Editor)
 
 3. Install the plugin!
 
 Special thanks **Stephen Kunkel** for creating the coolest Imgur/Snagit icon!
+
+## What's new in v1.2?
+
+* Added imgur account support! Click the down arrow and select **Account...** to get started!
+* Added copying the image URL to the clipboard automatically, as well as a popup notification, allowing you to open the browser on demand!
+* Added an options dialog to tweak your preferences
 
 ## Bugs? Questions? Suggestions?
 

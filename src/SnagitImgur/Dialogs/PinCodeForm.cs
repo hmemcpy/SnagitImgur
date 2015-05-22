@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
-using SnagitImgur.Properties;
+using SnagitImgur.OAuth;
 
 namespace SnagitImgur.Dialogs
 {
@@ -22,7 +22,30 @@ namespace SnagitImgur.Dialogs
         private async void btnAccept_Click(object sender, EventArgs e)
         {
             string pin = txtPinCode.Text.Trim();
-            await oauthHelper.Authenticate(pin);
+            pictureBox1.Visible = true;
+            btnAccept.Enabled = false;
+            btnCancel.Enabled = false;
+            Text = "Please wait...";
+
+            try
+            {
+                await oauthHelper.Authenticate(pin);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("An unexpected error occurred while authorizing the imgur account. Please try again.");
+                return;
+            }
+            finally
+            {
+                Text = "Authentication";
+                pictureBox1.Visible = false;
+                btnAccept.Enabled = true;
+                btnCancel.Enabled = true;
+            }
+
+            Close();
+            DialogResult = DialogResult.OK;
         }
     }
 }

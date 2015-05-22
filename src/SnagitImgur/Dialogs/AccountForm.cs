@@ -1,11 +1,6 @@
 ﻿using System;
-using System.Collections.Specialized;
-using System.Diagnostics;
-using System.Net;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using SnagitImgur.Properties;
+using SnagitImgur.OAuth;
 
 namespace SnagitImgur.Dialogs
 {
@@ -22,19 +17,15 @@ namespace SnagitImgur.Dialogs
 
         private void AccountFormLoad(object sender, EventArgs e)
         {
-            if (oauthHelper.IsAuthenticated)
-            {
-                ShowAccountDetails();
-            }
-
-            btnAuthenticate.Tag = "auth";
+            ShowAccountDetails();
         }
 
         private void ShowAccountDetails()
         {
-            lblAccountName.Text = oauthHelper.GetAccountName();
-            btnAuthenticate.Text = "&Sign Out";
-            btnAuthenticate.Tag = "sign_out";
+            bool auth = oauthHelper.IsAuthenticated;
+            lblAccountName.Text = auth ? oauthHelper.GetAccountName() : "Anonymous";
+            btnAuthenticate.Text = auth ? "&Sign Out" : "Authorize";
+            btnAuthenticate.Tag = auth ? "sign_out" : "auth";
         }
 
         private void btnAuthenticate_Click(object sender, EventArgs e)
@@ -43,8 +34,15 @@ namespace SnagitImgur.Dialogs
             switch (tag)
             {
                 case "sign_out":
-                    oauthHelper.SignOut();
-                    ShowAccountDetails();
+                    if (MessageBox.Show(
+                        string.Format("Are you sure you want to sign out '{0}'?", oauthHelper.GetAccountName()),
+                        "imgur.com",
+                        MessageBoxButtons.OKCancel,
+                        MessageBoxIcon.Question) == DialogResult.OK)
+                    {
+                        oauthHelper.SignOut();
+                        ShowAccountDetails();
+                    }
                     break;
                 case "auth":
                     oauthHelper.OpenAuthorizationPage();
@@ -62,68 +60,6 @@ namespace SnagitImgur.Dialogs
                     ShowAccountDetails();
                 }
             }
-        }
-    }
-
-    public class OAuthHelper
-    {
-        private readonly Settings settings;
-        private readonly string clientId;
-        private readonly string clientSecret;
-
-        public bool IsAuthenticated
-        {
-            get { return !string.IsNullOrWhiteSpace(settings.AccessToken); }
-        }
-
-        public string OAuthUrl { get; private set; }
-
-        public OAuthHelper(Settings settings)
-        {
-            this.settings = settings;
-            clientId = settings.ClientID;
-            clientSecret = settings.ClientSecret;
-            OAuthUrl = string.Format("https://api.imgur.com/oauth2/authorize?client_id={0}&response_type=pin&state=", clientId);
-        }
-
-        public string GetAccountName()
-        {
-            return settings.AccountUsername;
-        }
-
-        public async Task Authenticate(string pin)
-        {
-            using (var wc = new WebClient())
-            {
-                var c = new NameValueCollection();
-                c["client_id"] = clientId;
-                c["client_secret"] = clientSecret;
-                c["grant_type"] = "pin";
-                c["pin"] = pin;
-                byte[] result = await wc.UploadValuesTaskAsync("https://api.imgur.com/oauth2/token", "POST", c);
-                dynamic json = new JsonFx.Json.JsonReader().Read(Encoding.ASCII.GetString(result));
-
-                SaveValues(json);
-            }
-        }
-
-        private void SaveValues(dynamic json)
-        {
-            settings.AccessToken = json.access_token;
-            settings.RefreshToken = json.refresh_token;
-            settings.AccountID = json.account_id;
-            settings.AccountUsername = json.account_username;
-            settings.Save();
-        }
-
-        public void SignOut()
-        {
-            
-        }
-
-        public void OpenAuthorizationPage()
-        {
-            Process.Start(OAuthUrl);
         }
     }
 }

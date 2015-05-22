@@ -69,6 +69,7 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Net" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
     <Reference Include="TechSmith.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
@@ -89,6 +90,8 @@
     <Compile Include="Dialogs\PinCodeForm.Designer.cs">
       <DependentUpon>PinCodeForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="OAuth\ImgurToken.cs" />
+    <Compile Include="OAuth\OAuthHelper.cs" />
     <Compile Include="Plugin\ImageService\AnonymousClientAuthenticator.cs" />
     <Compile Include="Plugin\Extensions\AsyncExtensions.cs" />
     <Compile Include="Plugin\ImageService\IImageService.cs" />
@@ -119,6 +122,7 @@
     <Content Include="Package.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\spinning.gif" />
     <Content Include="SnagitImgur.Output.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>

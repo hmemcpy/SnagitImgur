@@ -5,6 +5,7 @@ using System.Windows.Forms;
 using CommonUtilAssembly;
 using RestSharp;
 using SnagitImgur.Dialogs;
+using SnagitImgur.OAuth;
 using SnagitImgur.Plugin.ImageService;
 using SnagitImgur.Properties;
 using SNAGITLib;
@@ -59,10 +60,10 @@ namespace SnagitImgur.Plugin
         public string GetOutputMenuData()
         {
             return "<menu> " +
-                      "<menuitem label=\"Send to imgur.com\" id=\"1\" />" +
+                      "<menuitem label=\"&Send to imgur.com\" id=\"1\" />" +
                       "<menuseparator />" +
-                      "<menuitem label=\"Account\" id=\"2\" />" +
-                      "<menuitem label=\"Options\" id=\"3\" />" +
+                      "<menuitem label=\"&Account...\" id=\"2\" />" +
+                      "<menuitem label=\"&Options\" id=\"3\" />" +
                       "<menuseparator />" +
                       "<menuitem label=\"About\" id=\"4\" />" +
                    "</menu>";
@@ -99,15 +100,9 @@ namespace SnagitImgur.Plugin
             }
         }
 
-        private bool IsAutenticated(Settings settings)
-        {
-            return !string.IsNullOrWhiteSpace(settings.AccessToken);
-        }
-
         private void ShowAbout()
         {
             MessageBox.Show("About");
-
         }
 
         public void ShowPackageOptionsUI()

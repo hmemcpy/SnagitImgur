@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CommonUtilAssembly;
 using SnagitImgur.Plugin.ImageService;
+using SnagitImgur.Properties;
 using SNAGITLib;
 
 namespace SnagitImgur.Plugin
@@ -13,11 +14,13 @@ namespace SnagitImgur.Plugin
     public class ShareController
     {
         private readonly ISnagIt snagitHost;
+        private readonly Settings settings;
         private readonly ISnagItAsyncOutput asyncOutput;
 
-        public ShareController(ISnagIt snagitHost)
+        public ShareController(ISnagIt snagitHost, Settings settings)
         {
             this.snagitHost = snagitHost;
+            this.settings = settings;
             asyncOutput = snagitHost as ISnagItAsyncOutput;
         }
 
@@ -54,9 +57,14 @@ namespace SnagitImgur.Plugin
 
         private void HandleResult(ImageInfo result)
         {
-            Clipboard.SetText(result.Url);
+            if (settings.CopyToClipboard)
+                Clipboard.SetText(result.Url);
 
-            ToasterWrapper.DisplayToaster("URL copied to clipboard!", "Open in browser...", PackageOutput.IconPath, () => Process.Start(result.Url));
+            ToasterWrapper.DisplayToaster("URL copied to clipboard!", "Open in browser...", PackageOutput.IconPath,
+                () => Process.Start(result.Url));
+
+            if (settings.OpenBrowser)
+                Process.Start(result.Url);
         }
 
         private void StartAsyncOutput()

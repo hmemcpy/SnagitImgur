@@ -84,6 +84,12 @@
     <Compile Include="Dialogs\AccountForm.Designer.cs">
       <DependentUpon>AccountForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Dialogs\OptionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Dialogs\OptionsForm.Designer.cs">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Dialogs\PinCodeForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,6 +144,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Dialogs\AccountForm.resx">
       <DependentUpon>AccountForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Dialogs\OptionsForm.resx">
+      <DependentUpon>OptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Dialogs\PinCodeForm.resx">
       <DependentUpon>PinCodeForm.cs</DependentUpon>

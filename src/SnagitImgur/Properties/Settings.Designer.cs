@@ -94,5 +94,29 @@ namespace SnagitImgur.Properties {
                 this["AccountUsername"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool CopyToClipboard {
+            get {
+                return ((bool)(this["CopyToClipboard"]));
+            }
+            set {
+                this["CopyToClipboard"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool OpenBrowser {
+            get {
+                return ((bool)(this["OpenBrowser"]));
+            }
+            set {
+                this["OpenBrowser"] = value;
+            }
+        }
     }
 }

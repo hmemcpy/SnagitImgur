@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
@@ -31,7 +32,7 @@ namespace SnagitImgur.Plugin
             }
 
             snagitWindow = new Win32HWndWrapper(new IntPtr(snagitHost.TopLevelHWnd));
-            shareController = new ShareController(snagitHost);
+            shareController = new ShareController(snagitHost, Settings.Default);
         }
 
         public void Output()
@@ -102,14 +103,20 @@ namespace SnagitImgur.Plugin
 
         private void ShowAbout()
         {
-            MessageBox.Show("About");
+            Process.Start("https://github.com/hmemcpy/SnagitImgur");
         }
 
         public void ShowPackageOptionsUI()
         {
-            MessageBox.Show("Settings");
-            
+            using (var optionsForm = new OptionsForm(Settings.Default))
+            {
+                if (optionsForm.ShowDialog(snagitWindow) == DialogResult.OK)
+                {
+                    Settings.Default.Save();
+                }
+            }
         }
+
         public void SetComponentCategoryPreferences(SnagItOutputPreferences prefs)
         {
             PackageDirectory = prefs.PackageDir;

@@ -55,7 +55,7 @@ namespace SnagitImgur.Dialogs
         {
             using (var pinCodeForm = new PinCodeForm(oauthHelper))
             {
-                if (pinCodeForm.ShowDialog() == DialogResult.OK)
+                if (pinCodeForm.ShowDialog(this) == DialogResult.OK)
                 {
                     ShowAccountDetails();
                 }

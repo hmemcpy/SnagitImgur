@@ -8,7 +8,7 @@ This plugin adds a button on the **Share** tab of the Image Editor, allowing you
 
 ## Download and installation instructions
 
-1. [**Download the installer**](https://github.com/hmemcpy/SnagitImgur/releases/download/1.2/SnagitImgur_1.2.msi) (latest version: v1.2, supports Snagit 11 and 12)
+1. [**Download the installer**](https://github.com/hmemcpy/SnagitImgur/releases/download/1.3/SnagitImgur_1.3.msi) (latest version: v1.3, supports Snagit 11 and 12)
 
 2. Exit Snagit (and Snagit Editor)
 
@@ -16,7 +16,7 @@ This plugin adds a button on the **Share** tab of the Image Editor, allowing you
 
 Special thanks **Stephen Kunkel** for creating the coolest Imgur/Snagit icon!
 
-## What's new in v1.2?
+## What's new in v1.3?
 
 * Added imgur account support! Click the down arrow and select **Account...** to get started!
 * Added copying the image URL to the clipboard automatically, as well as a popup notification, allowing you to open the browser on demand!

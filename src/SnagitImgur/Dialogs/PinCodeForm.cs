@@ -45,7 +45,6 @@ namespace SnagitImgur.Dialogs
                 btnAccept.Enabled = true;
                 btnCancel.Enabled = true;
             }
-
             Close();
             DialogResult = DialogResult.OK;
         }

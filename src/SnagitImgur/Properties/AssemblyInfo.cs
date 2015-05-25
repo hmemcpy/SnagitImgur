@@ -1,6 +1,6 @@
 ﻿using System.Reflection;
-using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
+using SnagitImgur.Plugin;
 
 [assembly: AssemblyTitle("SnagitImgur")]
 [assembly: AssemblyDescription("An unofficial plugin (\"accessory\") for Techsmith® Snagit® that allows sending captured images to imgur.com")]
@@ -10,7 +10,5 @@ using System.Runtime.InteropServices;
 
 [assembly: ComVisible(false)]
 
-[assembly: AssemblyVersion("1.2.0")]
-[assembly: AssemblyFileVersion("1.2.0")]
-
-[assembly: InternalsVisibleTo("SnagitImgur.Tests")]
+[assembly: AssemblyVersion(PackageOutput.Version)]
+[assembly: AssemblyFileVersion(PackageOutput.Version)]

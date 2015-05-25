@@ -13,10 +13,10 @@
     <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="MSIFASTINSTALL" MultiBuildValue="DefaultBuild:7"/>
     <ROW Property="Manufacturer" Value="Igal Tabachnik"/>
-    <ROW Property="ProductCode" Value="1033:{F9FB77B3-C65B-45AE-8464-328FAE4E8B71} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{914F90C6-40A4-4D3D-82CE-762839CE086E} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Imgur plugin for Snagit"/>
-    <ROW Property="ProductVersion" Value="1.2" Type="32"/>
+    <ROW Property="ProductVersion" Value="1.3" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{80886ACD-A6AC-44F2-A8CC-81EA74E66483}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>
@@ -45,6 +45,9 @@
     <ROW Component="CodeBase_3" ComponentId="{1E133BEE-36DD-46BF-9D8A-47E6B44F8D7B}" Directory_="APPDIR" Attributes="4" KeyPath="CodeBase_37"/>
     <ROW Component="CommonUtilAssembly.dll" ComponentId="{5C20BAA1-4611-44D5-8CE6-7E3C96FE429B}" Directory_="APPDIR" Attributes="0" KeyPath="CommonUtilAssembly.dll"/>
     <ROW Component="CommonUtilDLL.dll" ComponentId="{6768F059-AD8A-4D64-BB51-FEA87E0ECCA2}" Directory_="APPDIR" Attributes="0" KeyPath="CommonUtilDLL.dll"/>
+    <ROW Component="Exceptionless.Extras.dll" ComponentId="{A2268082-A660-437F-8E35-A4832D841184}" Directory_="APPDIR" Attributes="0" KeyPath="Exceptionless.Extras.dll"/>
+    <ROW Component="Exceptionless.Portable.dll" ComponentId="{D2D8938C-4F74-4EE0-A35B-F9A90170E875}" Directory_="APPDIR" Attributes="0" KeyPath="Exceptionless.Portable.dll"/>
+    <ROW Component="Exceptionless.dll" ComponentId="{1B7EBA4A-443A-4A95-99AF-7272E6B1DF8C}" Directory_="APPDIR" Attributes="0" KeyPath="Exceptionless.dll"/>
     <ROW Component="JsonFx.dll" ComponentId="{6EF9E48A-E617-4235-8FAE-19A4712C2E76}" Directory_="APPDIR" Attributes="0" KeyPath="JsonFx.dll"/>
     <ROW Component="RestSharp.dll" ComponentId="{8CBC0240-6DB6-42EF-B3AE-202ECCB2BCF3}" Directory_="APPDIR" Attributes="0" KeyPath="RestSharp.dll"/>
     <ROW Component="RuntimeVersion" ComponentId="{0FC8D20E-D13B-45DC-8E58-D44C1520B0A4}" Directory_="APPDIR" Attributes="4" KeyPath="RuntimeVersion"/>
@@ -67,12 +70,15 @@
     <ROW Component="imgur.com.ico" ComponentId="{439FC293-82D6-4D9B-BAC0-B7773B7DA8C3}" Directory_="APPDIR" Attributes="0" KeyPath="imgur.com.ico" Type="0"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFeatsComponent">
-    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="Assembly Assembly_5 Assembly_6 Assembly_7 C8FE654EBB45E7B4406E39B2CDBF29 C8FE654EBB45E7B4406E39B2CDBF29_1 Class Class_5 Class_6 Class_7 CodeBase CodeBase_1 CodeBase_2 CodeBase_3 CommonUtilAssembly.dll CommonUtilDLL.dll JsonFx.dll RestSharp.dll RuntimeVersion RuntimeVersion_5 RuntimeVersion_6 RuntimeVersion_7 SnagitImgur.dll ThreadingModel ThreadingModel_2 _ __10 __11 __12 __13 __14 __15 __16 __4 __9 imgur.com.ico"/>
+    <ROW Feature="MainFeature" Title="MainFeature" Description="Description" Display="1" Level="1" Directory_="APPDIR" Attributes="0" Components="Assembly Assembly_5 Assembly_6 Assembly_7 C8FE654EBB45E7B4406E39B2CDBF29 C8FE654EBB45E7B4406E39B2CDBF29_1 Class Class_5 Class_6 Class_7 CodeBase CodeBase_1 CodeBase_2 CodeBase_3 CommonUtilAssembly.dll CommonUtilDLL.dll Exceptionless.Extras.dll Exceptionless.Portable.dll Exceptionless.dll JsonFx.dll RestSharp.dll RuntimeVersion RuntimeVersion_5 RuntimeVersion_6 RuntimeVersion_7 SnagitImgur.dll ThreadingModel ThreadingModel_2 _ __10 __11 __12 __13 __14 __15 __16 __4 __9 imgur.com.ico"/>
     <ATTRIBUTE name="CurrentFeature" value="MainFeature"/>
   </COMPONENT>
   <COMPONENT cid="caphyon.advinst.msicomp.MsiFilesComponent">
     <ROW File="CommonUtilAssembly.dll" Component_="CommonUtilAssembly.dll" FileName="COMMON~1.DLL|CommonUtilAssembly.dll" Attributes="0" SourcePath="..\output\Release\CommonUtilAssembly.dll" SelfReg="false" NextFile="CommonUtilDLL.dll"/>
-    <ROW File="CommonUtilDLL.dll" Component_="CommonUtilDLL.dll" FileName="COMMON~2.DLL|CommonUtilDLL.dll" Attributes="0" SourcePath="..\output\Release\CommonUtilDLL.dll" SelfReg="false"/>
+    <ROW File="CommonUtilDLL.dll" Component_="CommonUtilDLL.dll" FileName="COMMON~2.DLL|CommonUtilDLL.dll" Attributes="0" SourcePath="..\output\Release\CommonUtilDLL.dll" SelfReg="false" NextFile="Exceptionless.dll"/>
+    <ROW File="Exceptionless.Extras.dll" Component_="Exceptionless.Extras.dll" FileName="EXCEPT~3.DLL|Exceptionless.Extras.dll" Attributes="0" SourcePath="..\output\Release\Exceptionless.Extras.dll" SelfReg="false"/>
+    <ROW File="Exceptionless.Portable.dll" Component_="Exceptionless.Portable.dll" FileName="EXCEPT~2.DLL|Exceptionless.Portable.dll" Attributes="0" SourcePath="..\output\Release\Exceptionless.Portable.dll" SelfReg="false" NextFile="Exceptionless.Extras.dll"/>
+    <ROW File="Exceptionless.dll" Component_="Exceptionless.dll" FileName="EXCEPT~1.DLL|Exceptionless.dll" Attributes="0" SourcePath="..\output\Release\Exceptionless.dll" SelfReg="false" NextFile="Exceptionless.Portable.dll"/>
     <ROW File="JsonFx.dll" Component_="JsonFx.dll" FileName="JsonFx.dll" Attributes="0" SourcePath="..\output\Release\JsonFx.dll" SelfReg="false" NextFile="Package.xml"/>
     <ROW File="Package.xml" Component_="imgur.com.ico" FileName="Package.xml" Attributes="0" SourcePath="..\output\Release\Package.xml" SelfReg="false" NextFile="RestSharp.dll"/>
     <ROW File="RestSharp.dll" Component_="RestSharp.dll" FileName="RESTSH~1.DLL|RestSharp.dll" Attributes="0" SourcePath="..\output\Release\RestSharp.dll" SelfReg="false" NextFile="SnagitImgur.Output.xml"/>

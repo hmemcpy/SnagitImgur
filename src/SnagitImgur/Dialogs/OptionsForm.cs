@@ -19,9 +19,6 @@ namespace SnagitImgur.Dialogs
             settings.CopyToClipboard = chkCopyToClipboard.Checked;
             settings.OpenInBrowser = chkOpenInBrowser.Checked;
             settings.ShowPopup = chkShowPopup.Checked;
-
-            Close();
-            DialogResult = DialogResult.OK;
         }
 
         private void OptionsForm_Load(object sender, EventArgs e)

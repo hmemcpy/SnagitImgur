@@ -19,7 +19,10 @@ namespace SnagitImgur.Plugin
     [Guid("681D1A5C-A78F-4D27-86A2-A07AAC89B8FE")]
     public class PackageOutput : MarshalByRefObject, IComponentInitialize, IOutput, IComponentWantsCategoryPreferences, IOutputMenu, IPackageOptionsUI
     {
-        internal static string IconPath;
+        public const string Version = "1.3.0";
+
+        public static string IconPath;
+
         private static string PackageDirectory;
         private IWin32Window snagitWindow;
         private ShareController shareController;
@@ -37,11 +40,6 @@ namespace SnagitImgur.Plugin
 
             snagitWindow = new Win32HWndWrapper(new IntPtr(snagitHost.TopLevelHWnd));
             shareController = new ShareController(snagitHost, Settings.Default);
-        }
-
-        private void OnSubmittingEvent(object sender, EventSubmittingEventArgs e)
-        {
-            
         }
 
         public void Output()
@@ -100,7 +98,8 @@ namespace SnagitImgur.Plugin
 
         private void ShowAbout()
         {
-            Process.Start("https://github.com/hmemcpy/SnagitImgur");
+            MessageBox.Show(string.Format("SnagitImgur v{0}\n\nby Igal Tabachnik", Version), "About SnagitImgur",
+                MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         public void ShowPackageOptionsUI()

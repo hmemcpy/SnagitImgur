@@ -28,7 +28,10 @@ namespace SnagitImgur.Plugin
         public void ShareImage(IImageService service)
         {
             string imagePath = GetCapturedImage();
-            SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
+
+            if (SynchronizationContext.Current == null)
+                SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
+
             var worker = Task.Run(() =>
             {
                 StartAsyncOutput();

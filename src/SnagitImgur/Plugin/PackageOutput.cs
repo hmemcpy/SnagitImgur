@@ -1,7 +1,10 @@
 using System;
 using System.Diagnostics;
 using System.IO;
+using System.Net;
 using System.Runtime.InteropServices;
+using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using CommonUtilAssembly;
 using Exceptionless;
@@ -17,7 +20,12 @@ namespace SnagitImgur.Plugin
     [ComVisible(true)]
     [ClassInterface(ClassInterfaceType.None)]
     [Guid("681D1A5C-A78F-4D27-86A2-A07AAC89B8FE")]
-    public class PackageOutput : MarshalByRefObject, IComponentInitialize, IOutput, IComponentWantsCategoryPreferences, IOutputMenu, IPackageOptionsUI
+    public class PackageOutput : MarshalByRefObject, 
+        IComponentInitialize, 
+        IOutput, 
+        IComponentWantsCategoryPreferences, 
+        IOutputMenu, 
+        IPackageOptionsUI
     {
         public const string Version = "1.3.0";
 
@@ -40,6 +48,34 @@ namespace SnagitImgur.Plugin
 
             snagitWindow = new Win32HWndWrapper(new IntPtr(snagitHost.TopLevelHWnd));
             shareController = new ShareController(snagitHost, Settings.Default);
+            CheckForUpdates();
+        }
+
+        private void CheckForUpdates()
+        {
+            if (SynchronizationContext.Current == null)
+                SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
+
+            new WebClient().DownloadStringTaskAsync("https://raw.githubusercontent.com/hmemcpy/SnagitImgur/master/latest.txt")
+              .ContinueWith(task => CheckVersion(task.Result),
+                  CancellationToken.None,
+                  TaskContinuationOptions.OnlyOnRanToCompletion,
+                  TaskScheduler.FromCurrentSynchronizationContext());
+        }
+
+        private void CheckVersion(string versionString)
+        {
+            if (string.IsNullOrWhiteSpace(versionString)) return;
+
+            var latest = new Version(versionString.Trim());
+            var current = new Version(Version);
+
+            if (latest > current)
+            {
+                const string latestUrl = "https://github.com/hmemcpy/SnagitImgur/releases/latest";
+
+                ToasterWrapper.DisplayToaster("New SnagitImgur version available!", "Click to download...", IconPath, () => Process.Start(latestUrl));
+            }
         }
 
         public void Output()

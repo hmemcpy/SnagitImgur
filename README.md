@@ -16,7 +16,7 @@ This plugin adds a button on the **Share** tab of the Image Editor, allowing you
 
 Special thanks **Stephen Kunkel** for creating the coolest Imgur/Snagit icon!
 
-## What's new in v1.3?
+## What's new?
 
 * Added imgur account support! Click the down arrow and select **Account...** to get started!
 * Added copying the image URL to the clipboard automatically, as well as a popup notification, allowing you to open the browser on demand!

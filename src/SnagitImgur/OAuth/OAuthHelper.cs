@@ -15,8 +15,6 @@ namespace SnagitImgur.OAuth
     public class OAuthHelper
     {
         private readonly Settings settings;
-        private readonly string clientId;
-        private readonly string clientSecret;
 
         public bool IsAuthenticated
         {
@@ -28,9 +26,7 @@ namespace SnagitImgur.OAuth
         public OAuthHelper(Settings settings)
         {
             this.settings = settings;
-            clientId = settings.ClientID;
-            clientSecret = settings.ClientSecret;
-            OAuthUrl = string.Format("https://api.imgur.com/oauth2/authorize?client_id={0}&response_type=pin&state=", clientId);
+            OAuthUrl = string.Format("https://api.imgur.com/oauth2/authorize?client_id={0}&response_type=pin&state=", settings.ClientID);
         }
 
         public string GetAccountName()
@@ -43,10 +39,27 @@ namespace SnagitImgur.OAuth
             using (var wc = new WebClient())
             {
                 var c = new NameValueCollection();
-                c["client_id"] = clientId;
-                c["client_secret"] = clientSecret;
+                c["client_id"] = settings.ClientID;
+                c["client_secret"] = settings.ClientSecret;
                 c["grant_type"] = "pin";
                 c["pin"] = pin;
+                byte[] result = await wc.UploadValuesTaskAsync("https://api.imgur.com/oauth2/token", "POST", c);
+                var token = new JsonFx.Json.JsonReader(new DataReaderSettings(new DataContractResolverStrategy()))
+                    .Read<ImgurToken>(Encoding.ASCII.GetString(result));
+
+                SaveValues(token);
+            }
+        }
+
+        public async Task RefreshAccessToken()
+        {
+            using (var wc = new WebClient())
+            {
+                var c = new NameValueCollection();
+                c["refresh_token"] = settings.RefreshToken;
+                c["client_id"] = settings.ClientID;
+                c["client_secret"] = settings.ClientSecret;
+                c["grant_type"] = "refresh_token";
                 byte[] result = await wc.UploadValuesTaskAsync("https://api.imgur.com/oauth2/token", "POST", c);
                 var token = new JsonFx.Json.JsonReader(new DataReaderSettings(new DataContractResolverStrategy()))
                     .Read<ImgurToken>(Encoding.ASCII.GetString(result));

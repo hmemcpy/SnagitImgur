@@ -5,6 +5,7 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CommonUtilAssembly;
+using Exceptionless;
 using SnagitImgur.Plugin.ImageService;
 using SnagitImgur.Properties;
 using SNAGITLib;
@@ -28,7 +29,7 @@ namespace SnagitImgur.Plugin
         {
             string imagePath = GetCapturedImage();
             SynchronizationContext.SetSynchronizationContext(new WindowsFormsSynchronizationContext());
-            var worker = Task.Factory.StartNew(() =>
+            var worker = Task.Run(() =>
             {
                 StartAsyncOutput();
                 var uploadTask = service.UploadImage(imagePath);
@@ -51,7 +52,8 @@ namespace SnagitImgur.Plugin
         {
             if (ae.InnerException != null)
             {
-                MessageBox.Show("An error occurred while uploading the image to imgur.com");
+                MessageBox.Show("An error occurred while uploading the image to imgur.com. Please try again.", "SnagitImgur", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                ae.InnerException.ToExceptionless().Submit();
             }
         }
 
@@ -60,10 +62,11 @@ namespace SnagitImgur.Plugin
             if (settings.CopyToClipboard)
                 Clipboard.SetText(result.Url);
 
-            ToasterWrapper.DisplayToaster("URL copied to clipboard!", "Open in browser...", PackageOutput.IconPath,
-                () => Process.Start(result.Url));
+            if (settings.ShowPopup)
+                ToasterWrapper.DisplayToaster("URL copied to clipboard!", "Open in browser...", PackageOutput.IconPath,
+                    () => Process.Start(result.Url));
 
-            if (settings.OpenBrowser)
+            if (settings.OpenInBrowser)
                 Process.Start(result.Url);
         }
 

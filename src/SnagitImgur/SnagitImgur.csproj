@@ -52,6 +52,18 @@
     <Reference Include="CommonUtilAssembly">
       <HintPath>..\..\lib\CommonUtilAssembly.dll</HintPath>
     </Reference>
+    <Reference Include="Exceptionless, Version=3.0.1337.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Exceptionless.3.0.1337\lib\net45\Exceptionless.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Exceptionless.Extras, Version=3.0.1337.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Exceptionless.3.0.1337\lib\net45\Exceptionless.Extras.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Exceptionless.Portable, Version=3.0.1337.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Exceptionless.Portable.3.0.1337\lib\portable-net40+sl50+win+wpa81+wp80\Exceptionless.Portable.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Interop.SNAGITLib">
       <HintPath>..\..\lib\Interop.SNAGITLib.dll</HintPath>
       <EmbedInteropTypes>True</EmbedInteropTypes>

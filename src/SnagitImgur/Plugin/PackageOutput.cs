@@ -4,6 +4,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using System.Windows.Forms;
 using CommonUtilAssembly;
+using Exceptionless;
 using RestSharp;
 using SnagitImgur.Dialogs;
 using SnagitImgur.OAuth;
@@ -25,6 +26,9 @@ namespace SnagitImgur.Plugin
 
         public void InitializeComponent(object pExtensionHost, IComponent pComponent, componentInitializeType initType)
         {
+            ExceptionlessClient.Default.Register();
+            ExceptionlessClient.Default.Configuration.ApiKey = "rMZZehkm8bq2HH0J9d4YV7pMYhkZPpHIfKcDsvSa";
+
             var snagitHost = pExtensionHost as ISnagIt;
             if (snagitHost == null)
             {
@@ -35,6 +39,11 @@ namespace SnagitImgur.Plugin
             shareController = new ShareController(snagitHost, Settings.Default);
         }
 
+        private void OnSubmittingEvent(object sender, EventSubmittingEventArgs e)
+        {
+            
+        }
+
         public void Output()
         {
             IImageService imageService = GetSelectedImageService();
@@ -43,19 +52,7 @@ namespace SnagitImgur.Plugin
 
         private IImageService GetSelectedImageService()
         {
-            return new ImgurService(
-                CreateAuthenticator(Settings.Default)
-                );
-        }
-
-        private IAuthenticator CreateAuthenticator(Settings settings)
-        {
-            if (!string.IsNullOrWhiteSpace(settings.AccessToken))
-            {
-                return new OAuth2AuthorizationRequestHeaderAuthenticator(settings.AccessToken, "Bearer");
-            }
-
-            return new AnonymousClientAuthenticator(settings.ClientID);
+            return new ImgurService(Settings.Default);
         }
 
         public string GetOutputMenuData()

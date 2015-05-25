@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Windows.Forms;
+using Exceptionless;
 using SnagitImgur.OAuth;
 
 namespace SnagitImgur.Dialogs
@@ -31,9 +32,10 @@ namespace SnagitImgur.Dialogs
             {
                 await oauthHelper.Authenticate(pin);
             }
-            catch (Exception)
+            catch (Exception ex)
             {
                 MessageBox.Show("An unexpected error occurred while authorizing the imgur account. Please try again.");
+                ex.ToExceptionless().Submit();
                 return;
             }
             finally

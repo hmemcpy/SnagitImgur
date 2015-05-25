@@ -109,13 +109,25 @@ namespace SnagitImgur.Properties {
         
         [global::System.Configuration.UserScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("True")]
-        public bool OpenBrowser {
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool OpenInBrowser {
             get {
-                return ((bool)(this["OpenBrowser"]));
+                return ((bool)(this["OpenInBrowser"]));
             }
             set {
-                this["OpenBrowser"] = value;
+                this["OpenInBrowser"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("True")]
+        public bool ShowPopup {
+            get {
+                return ((bool)(this["ShowPopup"]));
+            }
+            set {
+                this["ShowPopup"] = value;
             }
         }
     }

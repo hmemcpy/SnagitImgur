@@ -17,7 +17,8 @@ namespace SnagitImgur.Dialogs
         private void btnAccept_Click(object sender, EventArgs e)
         {
             settings.CopyToClipboard = chkCopyToClipboard.Checked;
-            settings.OpenBrowser = chkOpenBrowser.Checked;
+            settings.OpenInBrowser = chkOpenInBrowser.Checked;
+            settings.ShowPopup = chkShowPopup.Checked;
 
             Close();
             DialogResult = DialogResult.OK;
@@ -26,7 +27,8 @@ namespace SnagitImgur.Dialogs
         private void OptionsForm_Load(object sender, EventArgs e)
         {
             chkCopyToClipboard.Checked = settings.CopyToClipboard;
-            chkOpenBrowser.Checked = settings.OpenBrowser;
+            chkOpenInBrowser.Checked = settings.OpenInBrowser;
+            chkShowPopup.Checked = settings.ShowPopup;
         }
     }
 }

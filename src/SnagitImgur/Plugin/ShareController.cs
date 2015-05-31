@@ -63,7 +63,7 @@ namespace SnagitImgur.Plugin
         private void HandleResult(ImageInfo result)
         {
             if (settings.CopyToClipboard)
-                Clipboard.SetText(result.Url);
+                CopyToClipboard(result);
 
             if (settings.ShowPopup)
                 ToasterWrapper.DisplayToaster("URL copied to clipboard!", "Open in browser...", PackageOutput.IconPath,
@@ -71,6 +71,30 @@ namespace SnagitImgur.Plugin
 
             if (settings.OpenInBrowser)
                 Process.Start(result.Url);
+        }
+
+        private static void CopyToClipboard(ImageInfo result)
+        {
+            try
+            {
+                Clipboard.SetText(result.Url);
+            }
+            catch (ThreadStateException te)
+            {
+               te.ToExceptionless()
+                    .SetMessage("A thread exception occurred while copying to clipboard")
+                    .SetProperty("ThreadAppartment", Thread.CurrentThread.GetApartmentState())
+                    .SetProperty("SynchronizationContext", SynchronizationContext.Current)
+                    .SetProperty(".NET45", IsNet45OrNewer())
+                    .SetProperty("Runtime", Environment.Version)
+                    .Submit();
+            }
+        }
+
+        public static bool IsNet45OrNewer()
+        {
+            // Class "ReflectionContext" exists from .NET 4.5 onwards.
+            return Type.GetType("System.Reflection.ReflectionContext", false) != null;
         }
 
         private void StartAsyncOutput()

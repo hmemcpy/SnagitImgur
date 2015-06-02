@@ -8,7 +8,7 @@ This plugin adds a button on the **Share** tab of the Image Editor, allowing you
 
 ## Download and installation instructions
 
-1. [**Download the installer**](https://github.com/hmemcpy/SnagitImgur/releases/download/1.4/SnagitImgur_1.4.msi) (latest version: v1.4, supports Snagit 11 and 12)
+1. [**Download the installer**](https://github.com/hmemcpy/SnagitImgur/releases/download/1.4/SnagitImgur_1.4.1.msi) (latest version: v1.4.1, supports Snagit 11 and 12)
 
 2. Exit Snagit (and Snagit Editor)
 

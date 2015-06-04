@@ -13,10 +13,10 @@
     <ROW Property="AiPreferFastOem" MultiBuildValue="DefaultBuild:1"/>
     <ROW Property="MSIFASTINSTALL" MultiBuildValue="DefaultBuild:7"/>
     <ROW Property="Manufacturer" Value="Igal Tabachnik"/>
-    <ROW Property="ProductCode" Value="1033:{4739E71C-8E77-4DC7-B3A4-B23AE856C7F8} " Type="16"/>
+    <ROW Property="ProductCode" Value="1033:{15A1F39B-C9B1-4673-8352-F36ED1BE5D76} " Type="16"/>
     <ROW Property="ProductLanguage" Value="1033"/>
     <ROW Property="ProductName" Value="Imgur plugin for Snagit"/>
-    <ROW Property="ProductVersion" Value="1.4.1" Type="32"/>
+    <ROW Property="ProductVersion" Value="1.5.0" Type="32"/>
     <ROW Property="SecureCustomProperties" Value="OLDPRODUCTS;AI_NEWERPRODUCTFOUND"/>
     <ROW Property="UpgradeCode" Value="{80886ACD-A6AC-44F2-A8CC-81EA74E66483}"/>
     <ROW Property="WindowsType9X" MultiBuildValue="DefaultBuild:Windows 9x/ME" ValueLocId="-"/>

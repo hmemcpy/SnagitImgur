@@ -77,11 +77,11 @@ namespace SnagitImgur.Plugin
         {
             try
             {
-                Clipboard.SetText(result.Url);
+                RunAsSTAThread(() => Clipboard.SetText(result.Url));
             }
-            catch (ThreadStateException te)
+            catch(Exception ex)
             {
-               te.ToExceptionless()
+                ex.ToExceptionless()
                     .SetMessage("A thread exception occurred while copying to clipboard")
                     .SetProperty("ThreadAppartment", Thread.CurrentThread.GetApartmentState())
                     .SetProperty("SynchronizationContext", SynchronizationContext.Current)
@@ -91,7 +91,19 @@ namespace SnagitImgur.Plugin
             }
         }
 
-        public static bool IsNet45OrNewer()
+        private static void RunAsSTAThread(Action action)
+        {
+            var thread = new Thread(
+                () =>
+                {
+                    action();
+                });
+            thread.SetApartmentState(ApartmentState.STA);
+            thread.Start();
+            thread.Join();
+        }
+
+        private static bool IsNet45OrNewer()
         {
             // Class "ReflectionContext" exists from .NET 4.5 onwards.
             return Type.GetType("System.Reflection.ReflectionContext", false) != null;

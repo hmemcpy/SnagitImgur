@@ -25,7 +25,6 @@ namespace SnagitImgur.Dialogs
             string pin = txtPinCode.Text.Trim();
             pictureBox1.Visible = true;
             btnAccept.Enabled = false;
-            btnCancel.Enabled = false;
             Text = "Please wait...";
 
             try
@@ -43,7 +42,6 @@ namespace SnagitImgur.Dialogs
                 Text = "Authentication";
                 pictureBox1.Visible = false;
                 btnAccept.Enabled = true;
-                btnCancel.Enabled = true;
             }
             Close();
             DialogResult = DialogResult.OK;

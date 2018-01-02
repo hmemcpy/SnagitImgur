@@ -1,3 +1,5 @@
+# This plugin is no longer maintained. Interested in being the maintainer/owner? Send me an email to hmemcpy+snagit@gmail.com
+
 ![Snagit Imgur](http://i.imgur.com/g6aTS.png)
 
 A plugin ("accessory") for [TechSmith® Snagit®](http://www.techsmith.com/snagit.html) that allows sending captured images to online image sharing site [http://imgur.com](http://imgur.com).

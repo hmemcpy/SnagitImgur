@@ -65,9 +65,10 @@ namespace SnagitImgur.Plugin
             if (settings.CopyToClipboard)
                 CopyToClipboard(result);
 
-            if (settings.ShowPopup)
-                ToasterWrapper.DisplayToaster("URL copied to clipboard!", "Open in browser...", PackageOutput.IconPath,
-                    () => Process.Start(result.Url));
+            //Causes the application to crash on windows 10 needs to be rewritten
+
+            // ToasterWrapper.DisplayToaster("URL copied to clipboard!", "Open in browser...", PackageOutput.IconPath,
+            //   () => Process.Start(result.Url));
 
             if (settings.OpenInBrowser)
                 Process.Start(result.Url);
